@@ -1,0 +1,1381 @@
+{
+  "10.1145/3123266.3123427": {
+    "arxiv": "",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "Video Question Answering via Gradually Refined Attention over Appearance and Motion.pdf",
+    "web": "https://doi.org/10.1145/3123266.3123427"
+  },
+  "a4vl2026": {
+    "arxiv": "2603.14052",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/git-disl/A4VL",
+    "local_pdf": "A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning.pdf",
+    "web": ""
+  },
+  "azad2026streamready": {
+    "arxiv": "2603.08620",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "StreamReady Learning What to Answer and When in Long Streaming Videos.pdf",
+    "web": "https://sacrcv.github.io/StreamReady-website"
+  },
+  "bertasius2021space": {
+    "arxiv": "2102.05095",
+    "evidence": [],
+    "github": "https://github.com/facebookresearch/TimeSformer",
+    "local_pdf": "",
+    "web": ""
+  },
+  "carreira2017quo": {
+    "arxiv": "1705.07750",
+    "evidence": [],
+    "github": "",
+    "local_pdf": "",
+    "web": ""
+  },
+  "chatterjee2025memory": {
+    "arxiv": "2504.13915",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link",
+      "verified override: github"
+    ],
+    "github": "https://github.com/dibschat/ProVideLLM",
+    "local_pdf": "Memory-efficient Streaming VideoLLMs for Real-time Procedural Video Understanding.pdf",
+    "web": "https://dibschat.github.io/ProVideLLM"
+  },
+  "chen2025egoagent": {
+    "arxiv": "2502.05857",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/zju3dv/EgoAgent",
+    "local_pdf": "EgoAgent A Joint Predictive Agent Model in Egocentric Worlds.pdf",
+    "web": "https://egoagent.github.io"
+  },
+  "chen2025multimodal": {
+    "arxiv": "",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "A Multimodal Video Understanding Agent Based on Video-Audio Multi-Task Joint Fine-Tuning and State Machine Scheduling.pdf",
+    "web": "https://doi.org/10.1145/3773365.3773429"
+  },
+  "chen2026videochat": {
+    "arxiv": "2511.19524",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "VideoChat-M1 Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning.pdf",
+    "web": ""
+  },
+  "chowdhury2026magnet": {
+    "arxiv": "2506.07016",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "MAGNET A Multi-agent Framework for Finding Audio-Visual Needles by Reasoning over Multi-Video Haystacks.pdf",
+    "web": "https://schowdhury671.github.io/magnet_project"
+  },
+  "chu2025graphvideoagent": {
+    "arxiv": "2501.15953",
+    "evidence": [
+      "local PDF title match (0.77)",
+      "local PDF/BibTeX web link",
+      "verified override: arxiv"
+    ],
+    "github": "",
+    "local_pdf": "GraphVideoAgent Enhancing Long-form VideoUnderstanding with Entity Relation Graphs.pdf",
+    "web": "https://doi.org/10.1145/3746027.3755537"
+  },
+  "di2025streaming": {
+    "arxiv": "2503.00540",
+    "evidence": [
+      "local PDF title match (0.94)"
+    ],
+    "github": "https://github.com/Becomebright/ReKV",
+    "local_pdf": "ReKV-Streaming Video Question-Answering with In-context Video KV-Cache Retrieval.pdf",
+    "web": ""
+  },
+  "donahue2015long": {
+    "arxiv": "1411.4389",
+    "evidence": [],
+    "github": "",
+    "local_pdf": "",
+    "web": ""
+  },
+  "du2026appo": {
+    "arxiv": "2602.23823",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/GeWu-Lab/APPO",
+    "local_pdf": "APPO Attention-guided Perception Policy Optimization for Video Reasoning.pdf",
+    "web": ""
+  },
+  "fan2024videoagent": {
+    "arxiv": "2403.11481",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "VideoAgent A Memory-Augmented Multimodal Agent for Video Understanding.pdf",
+    "web": "https://videoagent.github.io"
+  },
+  "fan2025embodied": {
+    "arxiv": "2501.00358",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF/BibTeX web link",
+      "verified override: github"
+    ],
+    "github": "https://github.com/Embodied-VideoAgent/embodied-videoagent",
+    "local_pdf": "Embodied VideoAgent Persistent Memory from Egocentric Videos and Embodied Sensors Enables Dynamic Scene Understanding.pdf",
+    "web": "https://embodied-videoagent.github.io"
+  },
+  "fang2024mmbench": {
+    "arxiv": "2406.14515",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/open-compass/VLMEvalKit",
+    "local_pdf": "MMBench-Video A Long-Form Multi-Shot Benchmark for Holistic Video Understanding.pdf",
+    "web": ""
+  },
+  "feng2026video": {
+    "arxiv": "2503.21776",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/tulerfeng/Video-R1",
+    "local_pdf": "Video-R1 Reinforcing Video Reasoning in MLLMs.pdf",
+    "web": ""
+  },
+  "fu2025video": {
+    "arxiv": "2405.21075",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "Video-MME The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis.pdf",
+    "web": "https://video-mme.github.io"
+  },
+  "fu2025vispeak": {
+    "arxiv": "2503.12769",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/HumanMLLM/ViSpeak",
+    "local_pdf": "ViSpeak Visual Instruction Feedback in Streaming Videos.pdf",
+    "web": ""
+  },
+  "gao2017tall": {
+    "arxiv": "1705.02101",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/jiyanggao/TALL",
+    "local_pdf": "Tall Temporal activity localization via language query.pdf",
+    "web": ""
+  },
+  "gao2025agentic": {
+    "arxiv": "2511.14446",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "Agentic Video Intelligence A Flexible Framework for Advanced Video Exploration and Understanding.pdf",
+    "web": ""
+  },
+  "geng2025longvale": {
+    "arxiv": "2411.19772",
+    "evidence": [
+      "local PDF title match (0.94)",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "LongVALE Vision-Audio-Language-Event Benchmark Towards Time-Aware Omni-Modal Perception of Long Video.pdf",
+    "web": "https://ttgeng233.github.io/LongVALE"
+  },
+  "grauman2024ego": {
+    "arxiv": "2311.18259",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "Ego-Exo4D Understanding Skilled Human Activity from First- and Third-Person Perspectives.pdf",
+    "web": "http://ego-exo4d-data.org"
+  },
+  "guo2026agentic": {
+    "arxiv": "",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "verified override: web"
+    ],
+    "github": "",
+    "local_pdf": "Agentic Video Summarization via Self-Reflecting Multimodal Understanding.pdf",
+    "web": "https://openaccess.thecvf.com/content/CVPR2026/html/Guo_Agentic_Video_Summarization_via_Self-Reflecting_Multimodal_Understanding_CVPR_2026_paper.html"
+  },
+  "han2025roomtour3d": {
+    "arxiv": "2412.08591",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF/BibTeX web link",
+      "verified override: github"
+    ],
+    "github": "https://github.com/roomtour3d/roomtour3d-NaviLLM",
+    "local_pdf": "RoomTour3D Geometry-Aware Video-Instruction Tuning for Embodied Navigation.pdf",
+    "web": "https://roomtour3d.github.io"
+  },
+  "hassan2025gem": {
+    "arxiv": "2412.11198",
+    "evidence": [],
+    "github": "",
+    "local_pdf": "",
+    "web": ""
+  },
+  "he2025framethinker": {
+    "arxiv": "2509.24304",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/lcqysl/FrameThinker-RL",
+    "local_pdf": "FrameThinker Learning to Think with Long Videos via Multi-Turn Frame Spotlighting.pdf",
+    "web": ""
+  },
+  "hu2026video": {
+    "arxiv": "2501.13826",
+    "evidence": [
+      "local PDF title match (0.76)",
+      "local PDF arXiv identifier",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "Video-MMMU Evaluating Knowledge Acquisition from Multi-Discipline Professional Videos.pdf",
+    "web": "https://videommmu.github.io"
+  },
+  "huang2024vtimellm": {
+    "arxiv": "2311.18445",
+    "evidence": [],
+    "github": "",
+    "local_pdf": "",
+    "web": ""
+  },
+  "jain2026sage": {
+    "arxiv": "2512.13874",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/allenai/SAGE",
+    "local_pdf": "SAGE Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning.pdf",
+    "web": "https://praeclarumjj3.github.io/sage"
+  },
+  "jang2025scalable": {
+    "arxiv": "2505.12632",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "Scalable Video-to-Dataset Generation for Cross-Platform Mobile Agents.pdf",
+    "web": "https://monday-dataset.github.io"
+  },
+  "jiang2026referagent": {
+    "arxiv": "2602.03595",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/iSEE-Laboratory/Refer-Agent",
+    "local_pdf": "Refer-Agent A Collaborative Multi-Agent System with Reasoning and Reflection for Referring Video Object Segmentation.pdf",
+    "web": ""
+  },
+  "kim2025salova": {
+    "arxiv": "2411.16173",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link",
+      "verified override: github"
+    ],
+    "github": "https://github.com/IVY-LVLM/SALOVA",
+    "local_pdf": "SALOVA Segment-Augmented Long Video Assistant for Targeted Retrieval and Routing in Long-Form Video Analysis.pdf",
+    "web": "https://ivy-lvlm.github.io/SALOVA"
+  },
+  "li2020hero": {
+    "arxiv": "2005.00200",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "HERO Hierarchical Encoder for Video+Language Omni-representation Pre-training.pdf",
+    "web": ""
+  },
+  "li2024mvbench": {
+    "arxiv": "2311.17005",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "https://github.com/OpenGVLab/Ask-Anything",
+    "local_pdf": "MVBench A Comprehensive Multi-modal Video Understanding Benchmark.pdf",
+    "web": ""
+  },
+  "li2025lion": {
+    "arxiv": "2503.03663",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/JiuTian-VL/LION-FS",
+    "local_pdf": "LION-FS Fast & Slow Video-Language Thinker as Online Video Assistant.pdf",
+    "web": ""
+  },
+  "li2026lenswalk": {
+    "arxiv": "2603.24558",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "LensWalk Agentic Video Understanding by Planning How You See in Videos.pdf",
+    "web": ""
+  },
+  "li2026select": {
+    "arxiv": "2510.15440",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "Select Less, Reason More Prioritizing Evidence Purity for Video Reasoning.pdf",
+    "web": ""
+  },
+  "lin2026streamingbench": {
+    "arxiv": "2411.03628",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/THUNLP-MT/StreamingBench",
+    "local_pdf": "StreamingBench Assessing the Gap for MLLMs to Achieve Streaming Video Understanding.pdf",
+    "web": ""
+  },
+  "lin2026videoseek": {
+    "arxiv": "2603.20185",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/jylins/videoseek",
+    "local_pdf": "VideoSeek Long-Horizon Video Agent with Tool-Guided Seeking.pdf",
+    "web": ""
+  },
+  "liu2024tempcompass": {
+    "arxiv": "2403.00476",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/llyx97/TempCompass",
+    "local_pdf": "TempCompass Do Video LLMs Really Understand Videos.pdf",
+    "web": ""
+  },
+  "liu2025commonsense": {
+    "arxiv": "2501.05069",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier"
+    ],
+    "github": "",
+    "local_pdf": "Commonsense Video Question Answering through Video-Grounded Entailment Tree Reasoning.pdf",
+    "web": ""
+  },
+  "liu2025flow4agent": {
+    "arxiv": "2510.05836",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "Flow4Agent Long-form video understanding via motion prior from optical flow.pdf",
+    "web": ""
+  },
+  "liu2025videomind": {
+    "arxiv": "2503.13444",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF/BibTeX web link",
+      "verified override: github"
+    ],
+    "github": "https://github.com/yeliudev/VideoMind",
+    "local_pdf": "VideoMind A Chain-of-LoRA Agent for Temporal-Grounded Video Reasoning.pdf",
+    "web": "https://videomind.github.io"
+  },
+  "liu2026efficient": {
+    "arxiv": "2605.17921",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "An Efficient Streaming Video Understanding Framework with Agentic Control.pdf",
+    "web": ""
+  },
+  "liu2026thinking": {
+    "arxiv": "2603.12938",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/johncaged/ThinkStream",
+    "local_pdf": "Thinking in Streaming Video.pdf",
+    "web": ""
+  },
+  "liu2026watching": {
+    "arxiv": "2601.06943",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/QuantaAlpha/VideoDR-Benchmark",
+    "local_pdf": "Watching, Reasoning, and Searching A Video Deep Research Benchmark on Open Web for Agentic Video Reasoning.pdf",
+    "web": ""
+  },
+  "long2025seeing": {
+    "arxiv": "2508.09736",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "https://github.com/bytedance-seed/m3-agent",
+    "local_pdf": "Seeing, Listening, Remembering, and Reasoning A Multimodal Agent with Long-Term Memory.pdf",
+    "web": "https://m3-agent.github.io"
+  },
+  "lu2025videoagenttrek": {
+    "arxiv": "2510.19488",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link",
+      "verified override: github"
+    ],
+    "github": "https://github.com/xlang-ai/VideoAgentTrek",
+    "local_pdf": "VideoAgentTrek Computer Use Pretraining from Unlabeled Videos.pdf",
+    "web": "https://videoagenttrek.github.io"
+  },
+  "lu2025vited": {
+    "arxiv": "2503.12855",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier"
+    ],
+    "github": "",
+    "local_pdf": "VITED Video Temporal Evidence Distillation.pdf",
+    "web": ""
+  },
+  "luo2026thinking": {
+    "arxiv": "2510.06077",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "When Thinking Drifts Evidential Grounding for Robust Video Reasoning.pdf",
+    "web": "https://vision.cs.utexas.edu/projects/video-ver"
+  },
+  "luo2026video": {
+    "arxiv": "2411.13093",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/Leon1207/Video-RAG-master",
+    "local_pdf": "Video-RAG Visually-aligned Retrieval-Augmented Long Video Comprehension.pdf",
+    "web": ""
+  },
+  "lvagent2025": {
+    "arxiv": "2503.10200",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/64327069/LVAgent",
+    "local_pdf": "LVAgent Long Video Understanding by Multi-Round Dynamical Collaboration of MLLM Agents.pdf",
+    "web": ""
+  },
+  "ma2024hierarchical": {
+    "arxiv": "2403.03890",
+    "evidence": [],
+    "github": "",
+    "local_pdf": "",
+    "web": "https://yusufma03.github.io/projects/hdp"
+  },
+  "ma2025drvideo": {
+    "arxiv": "2406.12846",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/Upper9527/DrVideo",
+    "local_pdf": "DrVideo Document Retrieval Based Long Video Understanding.pdf",
+    "web": ""
+  },
+  "madan2024foundation": {
+    "arxiv": "2405.03770",
+    "evidence": [],
+    "github": "https://github.com/NeeluMadan/ViFM_Survey.git",
+    "local_pdf": "",
+    "web": ""
+  },
+  "mangalam2023egoschema": {
+    "arxiv": "2308.09126",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "Egoschema A diagnostic benchmark for very long-form video language understanding.pdf",
+    "web": "http://egoschema.github.io"
+  },
+  "nguyen2024video": {
+    "arxiv": "2406.05615",
+    "evidence": [],
+    "github": "https://github.com/nguyentthong/video-language-understanding",
+    "local_pdf": "",
+    "web": ""
+  },
+  "nie2024slowfocus": {
+    "arxiv": "2602.03589",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/fudan-zvg/SlowFocus",
+    "local_pdf": "SlowFocus Enhancing Fine-grained Temporal Understanding in Video LLM.pdf",
+    "web": ""
+  },
+  "ning2025video": {
+    "arxiv": "2311.16103",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/PKU-YuanGroup/Video-Bench",
+    "local_pdf": "Video-Bench A Comprehensive Benchmark and Toolkit for Evaluating Video-based Large Language Models.pdf",
+    "web": ""
+  },
+  "niu2025ovo": {
+    "arxiv": "2501.05510",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/JoeLeelyf/OVO-Bench",
+    "local_pdf": "OVO-Bench How Far is Your Video-LLMs from Real-World Online Video Understanding.pdf",
+    "web": ""
+  },
+  "pang2025mr": {
+    "arxiv": "2504.16082",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/ziqipang/MR-Video",
+    "local_pdf": "MR. Video MapReduce is the Principle for Long Video Understanding.pdf",
+    "web": ""
+  },
+  "park2025v": {
+    "arxiv": "2512.16925",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link",
+      "verified override: web"
+    ],
+    "github": "",
+    "local_pdf": "V-Agent An Interactive Video Search System Using Vision-Language Models.pdf",
+    "web": ""
+  },
+  "park2026deepvideo": {
+    "arxiv": "2506.07464",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/mlvlab/DeepVideoR1",
+    "local_pdf": "DeepVideo-R1 Video Reinforcement Fine-Tuning via Difficulty-aware Regressive GRPO.pdf",
+    "web": ""
+  },
+  "patraucean2023perception": {
+    "arxiv": "2305.13786",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/deepmind/perception_test",
+    "local_pdf": "Perception Test A Diagnostic Benchmark for Multimodal Video Models.pdf",
+    "web": ""
+  },
+  "pmlr-v235-fei24a": {
+    "arxiv": "2501.03230",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link",
+      "verified override: web",
+      "verified override: github"
+    ],
+    "github": "https://github.com/scofield7419/Video-of-Thought",
+    "local_pdf": "Video-of-Thought Step-by-Step Video Reasoning from Perception to Cognition.pdf",
+    "web": "https://haofei.vip/VoT"
+  },
+  "qian2024streaming": {
+    "arxiv": "2405.16009",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "Streaming Long Video Understanding with Large Language Models.pdf",
+    "web": ""
+  },
+  "qiu2026longvideo": {
+    "arxiv": "2602.20913",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/qiujihao19/LongVideo-R1",
+    "local_pdf": "LongVideo-R1 Smart Navigation for Low-cost Long Video Understanding.pdf",
+    "web": ""
+  },
+  "qiu2026videoseal": {
+    "arxiv": "2605.12571",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/Echochef/VideoSEAL",
+    "local_pdf": "VideoSEAL Mitigating Evidence Misalignment in Agentic Long Video Understanding by Decoupling Answer Authority.pdf",
+    "web": ""
+  },
+  "reagentv2025": {
+    "arxiv": "2506.01300",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/aiming-lab/ReAgent-V",
+    "local_pdf": "ReAgent-V A Reward-Driven Multi-Agent Framework for Video Understanding.pdf",
+    "web": ""
+  },
+  "rege2026agentic": {
+    "arxiv": "2601.18157",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/facebookresearch/egagent",
+    "local_pdf": "Agentic Very Long Video Understanding.pdf",
+    "web": ""
+  },
+  "ren2024timechat": {
+    "arxiv": "2312.02051",
+    "evidence": [],
+    "github": "https://github.com/RenShuhuai-Andy/TimeChat",
+    "local_pdf": "",
+    "web": ""
+  },
+  "shi2025enhancing": {
+    "arxiv": "2412.01694",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "Enhancing Video-LLM Reasoning via Agent-of-Thoughts Distillation.pdf",
+    "web": "https://zhengrongz.github.io/AoTD"
+  },
+  "song2024moviechat": {
+    "arxiv": "2307.16449",
+    "evidence": [],
+    "github": "",
+    "local_pdf": "",
+    "web": "https://rese1f.github.io/MovieChat"
+  },
+  "song2025modularized": {
+    "arxiv": "",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "verified override: web",
+      "verified override: github"
+    ],
+    "github": "https://github.com/song-zh19/MSR-ViR",
+    "local_pdf": "Modularized Self-Reflected Video Reasoner for Multimodal LLM with Application to Video Question Answering.pdf",
+    "web": "https://proceedings.mlr.press/v267/song25g.html"
+  },
+  "tang2025video": {
+    "arxiv": "2312.17432",
+    "evidence": [
+      "local PDF title match (0.63)"
+    ],
+    "github": "https://github.com/yunlong10/Awesome-LLMs-for-Video-Understanding",
+    "local_pdf": "Streaming Long Video Understanding with Large Language Models.pdf",
+    "web": ""
+  },
+  "tang2026asynchronous": {
+    "arxiv": "",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "verified override: web"
+    ],
+    "github": "",
+    "local_pdf": "Asynchronous temporal modeling with two-agent framework for streaming dense video captioning.pdf",
+    "web": "https://openaccess.thecvf.com/content/CVPR2026/html/Tang_Asynchronous_Temporal_Modeling_with_Two-Agent_Framework_for_Streaming_Dense_Video_CVPR_2026_paper.html"
+  },
+  "tran2015learning": {
+    "arxiv": "1412.0767",
+    "evidence": [],
+    "github": "",
+    "local_pdf": "",
+    "web": ""
+  },
+  "tu2026spagent": {
+    "arxiv": "2411.18983",
+    "evidence": [],
+    "github": "",
+    "local_pdf": "",
+    "web": ""
+  },
+  "wang2024lave": {
+    "arxiv": "2402.10294",
+    "evidence": [],
+    "github": "",
+    "local_pdf": "",
+    "web": ""
+  },
+  "wang2024videoagent": {
+    "arxiv": "2403.10517",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "VideoAgent Long-Form Video Understanding with Large Language Model as Agent.pdf",
+    "web": "https://wxh1996.github.io/VideoAgent-Website"
+  },
+  "wang2025lvbench": {
+    "arxiv": "2406.08035",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier"
+    ],
+    "github": "",
+    "local_pdf": "LVBench An Extreme Long Video Understanding Benchmark.pdf",
+    "web": "https://lvbench.github.io"
+  },
+  "wang2025mobile": {
+    "arxiv": "2502.17110",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "Mobile-Agent-V A Video-Guided Approach for Effortless and Efficient Operational Knowledge Injection in Mobile Automation.pdf",
+    "web": ""
+  },
+  "wang2025omnimmi": {
+    "arxiv": "2503.22952",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "OmniMMI A Comprehensive Multi-modal Interaction Benchmark in Streaming Video Contexts.pdf",
+    "web": "https://omnimmi.github.io"
+  },
+  "wang2025videollamb": {
+    "arxiv": "2409.01071",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/bigai-nlco/VideoLLaMB",
+    "local_pdf": "VideoLLaMB Long Streaming Video Understanding with Recurrent Memory Bridges.pdf",
+    "web": ""
+  },
+  "wang2026streambridge": {
+    "arxiv": "2505.05467",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "verified override: github"
+    ],
+    "github": "https://github.com/apple/ml-streambridge",
+    "local_pdf": "StreamBridge Turning Your Offline Video Large Language Model into a Proactive Streaming Assistant.pdf",
+    "web": ""
+  },
+  "wang2026streameqa": {
+    "arxiv": "2512.04451",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/MrYF-Wang/StreamEQA",
+    "local_pdf": "StreamEQA Towards Streaming Video Understanding for Embodied Scenarios.pdf",
+    "web": ""
+  },
+  "wang2026streammeco": {
+    "arxiv": "2604.09000",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier"
+    ],
+    "github": "https://github.com/Celina-love-sweet/StreamMeCo",
+    "local_pdf": "StreamMeCo Long-Term Agent Memory Compression for Efficient Streaming Video Understanding.pdf",
+    "web": ""
+  },
+  "wang2026think": {
+    "arxiv": "2603.04977",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "https://github.com/Haorane/VideoHV-Agent",
+    "local_pdf": "Think, Then Verify A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding.pdf",
+    "web": ""
+  },
+  "wang2026time": {
+    "arxiv": "2503.13377",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link",
+      "verified override: github"
+    ],
+    "github": "https://github.com/xiaomi-research/Time-R1",
+    "local_pdf": "Time-R1 Post-Training Large Vision Language Model for Temporal Video Grounding.pdf",
+    "web": "https://xuboshen.github.io/Time-R1"
+  },
+  "wang2026videochat": {
+    "arxiv": "2506.06097",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "https://github.com/SpXace/VideoChat-A1",
+    "local_pdf": "VideoChat-A1 Thinking with Long Videos by Chain-of-Shot Reasoning.pdf",
+    "web": ""
+  },
+  "wu2024longvideobench": {
+    "arxiv": "2407.15754",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "LongVideoBench A Benchmark for Long-context Interleaved Video-Language Understanding.pdf",
+    "web": "https://longvideobench.github.io"
+  },
+  "wu2024star": {
+    "arxiv": "2405.09711",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "Star A benchmark for situated reasoning in real-world videos.pdf",
+    "web": "http://star.csail.mit.edu"
+  },
+  "wu2026season": {
+    "arxiv": "2512.04643",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "SEASON Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding.pdf",
+    "web": "https://chriswu018.github.io/season"
+  },
+  "xiao2021next": {
+    "arxiv": "2105.08276",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link",
+      "verified override: arxiv"
+    ],
+    "github": "https://github.com/doc-doc/NExT-QA.git",
+    "local_pdf": "Next-qa Next phase of question-answering to explaining temporal actions.pdf",
+    "web": ""
+  },
+  "xie2025video": {
+    "arxiv": "2508.20478",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/Xyuan13/Video-MTR",
+    "local_pdf": "Video-MTR Reinforced Multi-Turn Reasoning for Long Video Understanding.pdf",
+    "web": ""
+  },
+  "xie2026streamrag": {
+    "arxiv": "",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "verified override: web"
+    ],
+    "github": "",
+    "local_pdf": "StreamRAG Enhancing Real-Time Video Understanding with Retrieval Augmentation.pdf",
+    "web": "https://openaccess.thecvf.com/content/CVPR2026/html/Xie_StreamRAG_Enhancing_Real-Time_Video_Understanding_with_Retrieval_Augmentation_CVPR_2026_paper.html"
+  },
+  "xing2026native": {
+    "arxiv": "2606.19341",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "https://github.com/harryhsing/OmniAgent",
+    "local_pdf": "Native Active Perception as Reasoning for Omni-Modal Understanding.pdf",
+    "web": "https://huggingface.co/harryhsing/OmniAgent-RL-7B"
+  },
+  "xiong2025streaming": {
+    "arxiv": "2501.13468",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/hmxiong/StreamChat",
+    "local_pdf": "Streaming video understanding and multi-round interaction with memory-enhanced knowledge.pdf",
+    "web": ""
+  },
+  "xu2026scieducator": {
+    "arxiv": "2511.17943",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier"
+    ],
+    "github": "",
+    "local_pdf": "SciEducator Scientific Video Understanding and Educating via Deming-Cycle Multi-Agent System.pdf",
+    "web": ""
+  },
+  "xu2026towards": {
+    "arxiv": "2602.13602",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "Towards Sparse Video Understanding and Reasoning.pdf",
+    "web": "https://sparsevideounderstanding.github.io"
+  },
+  "yan2026proact": {
+    "arxiv": "2603.03447",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "Proact-VL A Proactive VideoLLM for Real-Time AI Companions.pdf",
+    "web": "https://proact-vl.github.io"
+  },
+  "yan2026symphony": {
+    "arxiv": "2603.17307",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/Haiyang0226/Symphony",
+    "local_pdf": "Symphony A Cognitively-Inspired Multi-Agent System for Long-Video Understanding.pdf",
+    "web": ""
+  },
+  "yang2023vid2seq": {
+    "arxiv": "2302.14115",
+    "evidence": [],
+    "github": "",
+    "local_pdf": "",
+    "web": "https://antoyang.github.io/vid2seq.html"
+  },
+  "yang2024agent": {
+    "arxiv": "2412.09513",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "Agent-based Video Trimming.pdf",
+    "web": "https://ylingfeng.github.io/AVT"
+  },
+  "yang2024doraemongpt": {
+    "arxiv": "2401.08392",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "https://github.com/z-x-yang/DoraemonGPT",
+    "local_pdf": "DoraemonGPT Toward Understanding Dynamic Scenes with Large Language Models (Exemplified as A Video Agent).pdf",
+    "web": "https://z-x-yang.github.io/doraemon-gpt"
+  },
+  "yang2025streamagent": {
+    "arxiv": "2508.01875",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "StreamAgent Towards anticipatory agents for streaming video understanding.pdf",
+    "web": ""
+  },
+  "yang2025vca": {
+    "arxiv": "2412.10471",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "VCA Video Curious Agent for Long Video Understanding.pdf",
+    "web": ""
+  },
+  "yang2026graph": {
+    "arxiv": "2604.04372",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "Graph-to-Frame RAG Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning.pdf",
+    "web": ""
+  },
+  "yang2026longvt": {
+    "arxiv": "2511.20785",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "https://github.com/EvolvingLMMs-Lab/LongVT",
+    "local_pdf": "LongVT Incentivizing “Thinking with Long Videos” via Native Tool Calling.pdf",
+    "web": "https://evolvinglmms-lab.github.io/LongVT"
+  },
+  "yang2026panda": {
+    "arxiv": "2509.26386",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/showlab/PANDA",
+    "local_pdf": "PANDA Towards Generalist Video Anomaly Detection via Agentic AI Engineer.pdf",
+    "web": ""
+  },
+  "yang2026svagent": {
+    "arxiv": "2604.05079",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "SVAgent Storyline-guided Long Video Understanding via Cross-Modal Multi-Agent Collaboration.pdf",
+    "web": ""
+  },
+  "yao2026harnessing": {
+    "arxiv": "2606.08615",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "Harnessing Streaming Video in the Wild.pdf",
+    "web": ""
+  },
+  "yeo2026worldmm": {
+    "arxiv": "2512.02425",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF/BibTeX web link",
+      "verified override: github"
+    ],
+    "github": "https://github.com/wgcyeo/WorldMM",
+    "local_pdf": "WorldMM Dynamic Multimodal Memory Agent for Long Video Reasoning.pdf",
+    "web": "https://worldmm.github.io"
+  },
+  "yin2026hierarchical": {
+    "arxiv": "2601.13719",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "Hierarchical Long Video Understanding with Audiovisual Entity Cohesion and Agentic Search.pdf",
+    "web": ""
+  },
+  "yin2026videoarm": {
+    "arxiv": "2512.12360",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF/BibTeX web link",
+      "verified override: github"
+    ],
+    "github": "https://github.com/MILVLG/videoarm",
+    "local_pdf": "VideoARM Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding.pdf",
+    "web": "https://milvlg.github.io/videoarm"
+  },
+  "yu2019activitynet": {
+    "arxiv": "1906.02467",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "https://github.com/MILVLG/activitynet-qa",
+    "local_pdf": "Activitynet-qa A dataset for understanding complex web videos via question answering.pdf",
+    "web": ""
+  },
+  "yu2026ego2web": {
+    "arxiv": "2603.22529",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF GitHub link",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "https://github.com/Yui010206/Ego2Web",
+    "local_pdf": "Ego2Web A Web Agent Benchmark Grounded in Egocentric Videos.pdf",
+    "web": "https://ego2web.github.io"
+  },
+  "yu2026eyes": {
+    "arxiv": "2510.14560",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "Eyes Wide Open Ego Proactive Video-LLM for Streaming Video.pdf",
+    "web": "https://zhangyl4.github.io/publications/eyes-wide-open"
+  },
+  "yuan2025videoexplorer": {
+    "arxiv": "2506.10821",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/yhy-2000/VideoDeepResearch",
+    "local_pdf": "VideoExplorer Think With Videos For Agentic Long-Video Understanding.pdf",
+    "web": ""
+  },
+  "zala2023hierarchical": {
+    "arxiv": "2303.16406",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/j-min/HiREST",
+    "local_pdf": "Hierarchical video-moment retrieval and step-captioning.pdf",
+    "web": "https://hirest-cvpr2023.github.io"
+  },
+  "zhang2024internlm": {
+    "arxiv": "2412.09596",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link",
+      "verified override: github"
+    ],
+    "github": "https://github.com/InternLM/InternLM-XComposer/tree/main/InternLM-XComposer-2.5-OmniLive",
+    "local_pdf": "InternLM-XComposer2.5-OmniLive A Comprehensive Multimodal System for Long-term Streaming Video and Audio Interactions.pdf",
+    "web": ""
+  },
+  "zhang2024omagent": {
+    "arxiv": "2406.16620",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/om-ai-lab/OmAgent",
+    "local_pdf": "OmAgent A Multi-modal Agent Framework for Complex Video Understanding with Task Divide-and-Conquer.pdf",
+    "web": ""
+  },
+  "zhang2025avila": {
+    "arxiv": "2506.18472",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "AViLA Asynchronous Vision-Language Agent for Streaming Multimodal Data Interaction.pdf",
+    "web": ""
+  },
+  "zhang2025flash": {
+    "arxiv": "2506.23825",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/IVGSZ/Flash-VStream",
+    "local_pdf": "Flash-vstream Efficient real-time understanding for long video streams.pdf",
+    "web": ""
+  },
+  "zhang2025rewatch": {
+    "arxiv": "2509.23652",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link",
+      "verified override: github"
+    ],
+    "github": "https://github.com/alibaba/ReWatch-R1",
+    "local_pdf": "ReWatch-R1 Boosting Complex Video Reasoning in Large Vision-Language Models through Agentic Data Synthesis.pdf",
+    "web": "https://rewatch-r1.github.io"
+  },
+  "zhang2025towards": {
+    "arxiv": "2507.15028",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "Towards Video Thinking Test A Holistic Benchmark for Advanced Video Reasoning and Understanding.pdf",
+    "web": "https://zhangyuanhan-ai.github.io/video-tt"
+  },
+  "zhang2025vtimecot": {
+    "arxiv": "2510.14672",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "VTimeCoT Thinking by Drawing for Video Temporal Grounding and Reasoning.pdf",
+    "web": "https://vtimecot.github.io"
+  },
+  "zhang2026adavideorag": {
+    "arxiv": "2506.13589",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/xzc-zju/AdaVideoRAG",
+    "local_pdf": "AdaVideoRAG Omni-Contextual Adaptive Retrieval-Augmented Efficient Long Video Understanding.pdf",
+    "web": ""
+  },
+  "zhang2026deep": {
+    "arxiv": "2505.18079",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/microsoft/DeepVideoDiscovery",
+    "local_pdf": "Deep Video Discovery Agentic Search with Tool Use for Long-form Video Understanding.pdf",
+    "web": ""
+  },
+  "zhang2026eva": {
+    "arxiv": "2603.22918",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/wangruohui/EfficientVideoAgent",
+    "local_pdf": "EVA Efficient Reinforcement Learning for End-to-End Video Agent.pdf",
+    "web": ""
+  },
+  "zhang2026thinking": {
+    "arxiv": "2508.04416",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier",
+      "local PDF/BibTeX web link",
+      "verified override: web",
+      "verified override: github"
+    ],
+    "github": "https://github.com/zhang9302002/ThinkingWithVideos",
+    "local_pdf": "Thinking With Videos Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning.pdf",
+    "web": "https://zhang9302002.github.io/thinkingwithvideos-page"
+  },
+  "zhao2025drivedreamer4d": {
+    "arxiv": "2410.13571",
+    "evidence": [],
+    "github": "",
+    "local_pdf": "",
+    "web": "https://drivedreamer4d.github.io"
+  },
+  "zhao2026omnipro": {
+    "arxiv": "2605.18577",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link"
+    ],
+    "github": "",
+    "local_pdf": "OmniPro A Comprehensive Benchmark for Omni-Proactive Streaming Video Understanding.pdf",
+    "web": "https://ruixiangzhao.github.io/OmniPro"
+  },
+  "zhi2025videoagent2": {
+    "arxiv": "2504.04471",
+    "evidence": [
+      "local PDF title match (1.00)"
+    ],
+    "github": "",
+    "local_pdf": "VideoAgent2 Enhancing the LLM-Based Agent System for Long-Form Video Understanding by Uncertainty-Aware CoT.pdf",
+    "web": ""
+  },
+  "zhou2018towards": {
+    "arxiv": "1703.09788",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier"
+    ],
+    "github": "",
+    "local_pdf": "Towards Automatic Learning of Procedures from Web Instructional Videos.pdf",
+    "web": ""
+  },
+  "zhou2025mlvu": {
+    "arxiv": "2406.04264",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF arXiv identifier"
+    ],
+    "github": "",
+    "local_pdf": "MLVU Benchmarking Multi-task Long Video Understanding.pdf",
+    "web": ""
+  },
+  "zou2026videobrain": {
+    "arxiv": "2602.04094",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF GitHub link"
+    ],
+    "github": "https://github.com/junbo-zou/VideoBrain",
+    "local_pdf": "VideoBrain Learning Adaptive Frame Sampling for Long Video Understanding.pdf",
+    "web": ""
+  },
+  "zuo2026videolucy": {
+    "arxiv": "2510.12422",
+    "evidence": [
+      "local PDF title match (1.00)",
+      "local PDF/BibTeX web link",
+      "verified override: github"
+    ],
+    "github": "https://github.com/worldbench/VideoLucy",
+    "local_pdf": "VideoLucy Deep Memory Backtracking for Long Video Understanding.pdf",
+    "web": "https://videolucy.github.io"
+  }
+}

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import json
 from collections import defaultdict
 from dataclasses import dataclass, field
 from difflib import SequenceMatcher
@@ -14,6 +15,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE_ROOT = REPO_ROOT.parent
 SOURCE_ROOT = WORKSPACE_ROOT / "Article" / "Video_Agent_Survey"
 PAPER_ROOT = WORKSPACE_ROOT / "paper"
+LINK_CACHE = REPO_ROOT / "data" / "paper_links.json"
+LINK_OVERRIDES = REPO_ROOT / "data" / "verified_link_overrides.json"
 
 
 @dataclass
@@ -221,10 +224,22 @@ def link_metadata(entries: dict[str, BibEntry], cited_keys: set[str]) -> dict[st
             )
         )
         metadata[key] = {
+            "arxiv": arxiv_id(entry),
+            "web": project_candidates[0] if project_candidates else "",
             "github": github,
-            "project": project_candidates[0] if project_candidates else "",
             "local_pdf": pdf.name if pdf else "",
         }
+    for source in [LINK_CACHE, LINK_OVERRIDES]:
+        if not source.exists():
+            continue
+        cached = json.loads(source.read_text(encoding="utf-8"))
+        for key in cited_keys:
+            if key not in cached:
+                continue
+            metadata.setdefault(key, {})
+            for field_name in ["arxiv", "web", "github", "local_pdf"]:
+                if field_name in cached[key]:
+                    metadata[key][field_name] = cached[key][field_name]
     return metadata
 
 
@@ -289,6 +304,14 @@ def paper_url(entry: BibEntry) -> str:
     return f"https://doi.org/{doi}" if doi else ""
 
 
+def publication_url(entry: BibEntry) -> str:
+    url = clean_latex(entry.fields.get("url", ""))
+    if url.startswith(("http://", "https://")) and "arxiv.org" not in url.lower():
+        return url
+    doi = clean_latex(entry.fields.get("doi", ""))
+    return f"https://doi.org/{doi}" if doi else ""
+
+
 def badge(entry: BibEntry) -> str:
     url = paper_url(entry)
     identifier = arxiv_id(entry)
@@ -311,6 +334,20 @@ def github_badge(url: str) -> str:
     return f"[![GitHub](https://img.shields.io/github/stars/{repo}?style=flat-square&logo=github)]({url})"
 
 
+def arxiv_badge(identifier: str) -> str:
+    if not identifier:
+        return "-"
+    url = f"https://arxiv.org/abs/{identifier}"
+    image = f"https://img.shields.io/badge/arXiv-{identifier}-b31b1b?style=flat-square&logo=arxiv"
+    return f"[![arXiv]({image})]({url})"
+
+
+def web_badge(url: str) -> str:
+    if not url:
+        return "-"
+    return f"[![Web](https://img.shields.io/badge/Web-Page-f59e0b?style=flat-square&logo=googlechrome&logoColor=white)]({url})"
+
+
 def slug(key: str) -> str:
     return "paper-" + re.sub(r"[^a-z0-9]+", "-", key.lower()).strip("-")
 
@@ -328,12 +365,12 @@ def row(
     tag_html = ""
     if tags:
         tag_html = "<br><sub>" + " · ".join(tags) + "</sub>"
-    paper_badge = badge(entry)
-    paper_cell = f"{paper_badge}<br>{entry.title}" if paper_badge else entry.title
-    project = links.get(key, {}).get("project", "")
-    project_cell = f"[![Project](https://img.shields.io/badge/Project-Page-f59e0b?style=flat-square)]({project})" if project else "-"
+    published = publication_url(entry)
+    paper_cell = f"[{entry.title}]({published})" if published else entry.title
+    identifier = links.get(key, {}).get("arxiv", "") or arxiv_id(entry)
+    web = links.get(key, {}).get("web", "")
     github = github_badge(links.get(key, {}).get("github", ""))
-    return f"| {anchor}`{short_name}`{tag_html} | {paper_cell} | {venue_label(entry, year_override)} | {project_cell} | {github} |"
+    return f"| {anchor}`{short_name}`{tag_html} | {paper_cell} | {venue_label(entry, year_override)} | {arxiv_badge(identifier)} | {web_badge(web)} | {github} |"
 
 
 def method_index(methods: list[Method]) -> str:
@@ -342,10 +379,33 @@ def method_index(methods: list[Method]) -> str:
 
 def table_header() -> list[str]:
     return [
-        "| Model | Paper | Venue | Website | GitHub |",
-        "|:-:|:-|:-:|:-:|:-:|",
-        "||",
+        "| Method | Paper | Venue | arXiv | Web | GitHub |",
+        "|:-:|:-|:-:|:-:|:-:|:-:|",
     ]
+
+
+def mark(active: bool) -> str:
+    return "✓" if active else "–"
+
+
+def taxonomy_matrix(methods: list[Method]) -> list[str]:
+    lines = [
+        "| Method | Year | Challenge | State Space | TF | SFT | RL | Traj. | Ground. | Reward |",
+        "|:-|:-:|:-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|",
+    ]
+    for method in sorted(methods, key=lambda item: (item.year, item.method.lower())):
+        linked = f"[`{method.method}`](#{slug(method.key)})"
+        paradigm = method.paradigm.replace("Paradigm ", "P-")
+        values = [
+            mark("Training-Free" in method.learning),
+            mark("SFT" in method.learning),
+            mark("RL" in method.learning),
+            mark("Trajectory" in method.supervision),
+            mark("Grounding" in method.supervision),
+            mark("Reward" in method.supervision),
+        ]
+        lines.append(f"| {linked} | {method.year} | {method.challenge} | {paradigm} | " + " | ".join(values) + " |")
+    return lines
 
 
 def build_readme() -> str:
@@ -451,18 +511,9 @@ def build_readme() -> str:
         "  - [Temporal Causality](#temporal-causality)",
         "  - [Multimodal Ambiguity](#multimodal-ambiguity)",
         "- [**2. State-Space Paradigms**](#2-state-space-paradigms)",
-        "  - [Video as a Bag of Frames](#paradigm-i-video-as-a-bag-of-frames)",
-        "  - [Video as a Temporal Sequence](#paradigm-ii-video-as-a-temporal-sequence)",
-        "  - [Video as a Graph of Entities](#paradigm-iii-video-as-a-graph-of-entities)",
-        "  - [Video as an Evolving World State](#paradigm-iv-video-as-an-evolving-world-state)",
         "- [**3. Learning Paradigms**](#3-learning-paradigms)",
-        "  - [Training-Free and Inference-Time Control](#training-free-and-inference-time-control)",
-        "  - [Supervised Fine-Tuning and Imitation Learning](#supervised-fine-tuning-and-imitation-learning)",
-        "  - [Reinforcement Learning](#reinforcement-learning)",
         "- [**4. Data and Supervision**](#4-data-and-supervision)",
-        "  - [Trajectory Supervision](#trajectory-supervision)",
-        "  - [Grounding Supervision](#grounding-supervision)",
-        "  - [Preference and Reward Supervision](#preference-and-reward-supervision)",
+        "  - [Complete Taxonomy Matrix](#complete-taxonomy-matrix)",
         "- [**5. Benchmarks**](#5-benchmarks)",
         "  - [Capability-Oriented Benchmarks](#capability-oriented-benchmarks)",
         "  - [Agent-Oriented Benchmarks](#agent-oriented-benchmarks)",
@@ -480,7 +531,7 @@ def build_readme() -> str:
         lines += table_header()
         for key in sorted(keys, key=lambda item: (entries.get(item, BibEntry(item, "misc", {})).year, short_names.get(item, item).lower())):
             lines.append(row(short_names.get(key, key), key, entries, links))
-        lines += ["||"]
+        lines += [""]
 
     challenge_intros = {
         "Context Bottleneck": "Long, streaming, and multi-source videos exceed practical context and compute budgets. Hierarchical evidence memory retains compact, addressable, and provenance-aware video evidence.",
@@ -498,7 +549,7 @@ def build_readme() -> str:
             tags += method.learning or ["Unspecified learning"]
             tags += [f"{signal} supervision" for signal in method.supervision]
             lines.append(row(method.method, method.key, entries, links, tags, method.year))
-        lines += ["||"]
+        lines += [""]
 
     paradigm_descriptions = {
         "Paradigm I": ("Paradigm I: Video as a Bag of Frames", "Selected frames, keyframes, clips, shots, or candidate segments serve as discrete evidence units."),
@@ -506,30 +557,51 @@ def build_readme() -> str:
         "Paradigm III": ("Paradigm III: Video as a Graph of Entities", "Persistent entities and evidence links support long-range association and multimodal retrieval."),
         "Paradigm IV": ("Paradigm IV: Video as an Evolving World State", "A partial, time-indexed state is revised as observations arrive and future evidence remains unavailable."),
     }
-    lines += ["", "# 2. State-Space Paradigms", "", "These are orthogonal indexes over the canonical Challenge-to-Design tables. Links return to the paper's unique metadata row."]
+    lines += [
+        "", "# 2. State-Space Paradigms", "",
+        "The four paradigms describe the operative state exposed to the agent. The complete method-level assignments appear once in the taxonomy matrix below.", "",
+        "| Code | State-space view | Operational meaning | Methods |",
+        "|:-:|:-|:-|:-:|",
+    ]
     for paradigm, (heading, description) in paradigm_descriptions.items():
         subset = [method for method in methods if method.paradigm == paradigm]
-        lines += ["", f"### {heading}", "", description, "", method_index(subset)]
+        lines.append(f"| **{paradigm.replace('Paradigm ', 'P-')}** | {heading.split(': ', 1)[1]} | {description} | **{len(subset)}** |")
 
     learning_descriptions = {
         "Training-Free": ("Training-Free and Inference-Time Control", "Prompts, tools, retrieval procedures, memory rules, verification, waiting, and stopping criteria specify agent behavior at inference time."),
         "SFT": ("Supervised Fine-Tuning and Imitation Learning", "Answer labels, component objectives, or demonstrated trajectories supervise agent decisions."),
         "RL": ("Reinforcement Learning", "Outcome and process rewards optimize evidence acquisition, grounding, efficiency, timing, or reasoning validity."),
     }
-    lines += ["", "# 3. Learning Paradigms", "", "A method can use more than one learning regime; repeated names below are index links, not duplicated paper records."]
+    lines += [
+        "", "# 3. Learning Paradigms", "",
+        "Learning regimes are multi-label: one method may combine supervised initialization, reinforcement learning, and inference-time control.", "",
+        "| Code | Learning regime | What is optimized or specified | Methods |",
+        "|:-:|:-|:-|:-:|",
+    ]
     for label, (heading, description) in learning_descriptions.items():
         subset = [method for method in methods if label in method.learning]
-        lines += ["", f"### {heading}", "", description, "", method_index(subset)]
+        lines.append(f"| **{label}** | {heading} | {description} | **{len(subset)}** |")
 
     supervision_descriptions = {
         "Trajectory": ("Trajectory Supervision", "Step-by-step observations, tool calls, state changes, revisions, failures, and stopping decisions."),
         "Grounding": ("Grounding Supervision", "Temporal intervals, regions, tracks, entities, audio cues, OCR spans, and state changes that support a claim."),
         "Reward": ("Preference and Reward Supervision", "Comparative or scalar signals over evidence choice, reasoning quality, response timing, or complete rollouts."),
     }
-    lines += ["", "# 4. Data and Supervision", "", "The former Appendix material is promoted here as a first-class part of the survey taxonomy."]
+    lines += [
+        "", "# 4. Data and Supervision", "",
+        "The former Appendix material is promoted here as a first-class part of the taxonomy. Supervision signals are also multi-label.", "",
+        "| Code | Supervision signal | What the signal contains | Methods |",
+        "|:-:|:-|:-|:-:|",
+    ]
     for label, (heading, description) in supervision_descriptions.items():
         subset = [method for method in methods if label in method.supervision]
-        lines += ["", f"### {heading}", "", description, "", method_index(subset)]
+        lines.append(f"| **{label}** | {heading} | {description} | **{len(subset)}** |")
+    lines += [
+        "", "### Complete Taxonomy Matrix", "",
+        "Each method appears here as a compact linked index. Click a method name to jump to its unique paper record in the Challenge-to-Design catalog.", "",
+        "**Legend:** TF = training-free control; SFT = supervised fine-tuning; RL = reinforcement learning; Traj. = trajectory supervision; Ground. = grounding supervision.", "",
+    ]
+    lines += taxonomy_matrix(methods)
 
     capability = [key for key in benchmark_names if key not in agent_benchmarks]
     agent = [key for key in benchmark_names if key in agent_benchmarks]
@@ -539,7 +611,7 @@ def build_readme() -> str:
         lines += table_header()
         for key in sorted(keys, key=lambda item: (entries.get(item, BibEntry(item, "misc", {})).year, benchmark_names[item].lower())):
             lines.append(row(benchmark_names[key], key, entries, links))
-        lines += ["||"]
+        lines += [""]
 
     lines += ["", "# 6. Additional Cited Works", "", "The following cited works are not part of the 94-row core method table or the benchmark catalog, but are discussed in the survey's scope, learning, or supervision sections.", ""]
     lines += table_header()
@@ -547,7 +619,7 @@ def build_readme() -> str:
         title = entries.get(key, BibEntry(key, "misc", {"title": key})).title
         short = title.split(":", 1)[0][:48]
         lines.append(row(short, key, entries, links))
-    lines += ["||", "", "## Contributing", "", "Contributions are welcome. For a new paper, please include:", "", "- title, venue, year, and stable paper URL;", "- project page and GitHub repository when available;", "- one primary challenge and one state-space paradigm;", "- all applicable learning regimes and supervision signals;", "- one sentence explaining why the method satisfies the survey's agent definition.", "", "<div align=\"center\">", "", "**[⬆ Back to Top](#agentic-video-understanding-a-survey)**", "", "*Generated from the survey LaTeX tables and BibTeX source.*", "", "</div>", ""]
+    lines += ["", "## Contributing", "", "Contributions are welcome. For a new paper, please include:", "", "- title, venue, year, and stable paper URL;", "- arXiv link, project page, and GitHub repository when available;", "- one primary challenge and one state-space paradigm;", "- all applicable learning regimes and supervision signals;", "- one sentence explaining why the method satisfies the survey's agent definition.", "", "<div align=\"center\">", "", "**[⬆ Back to Top](#agentic-video-understanding-a-survey)**", "", "*Generated from the survey LaTeX tables and BibTeX source.*", "", "</div>", ""]
 
     return "\n".join(lines)
 

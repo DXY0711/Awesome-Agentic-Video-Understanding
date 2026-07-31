@@ -1,0 +1,71 @@
+{
+  "chatterjee2025memory": {
+    "github": "https://github.com/dibschat/ProVideLLM"
+  },
+  "chu2025graphvideoagent": {
+    "arxiv": "2501.15953"
+  },
+  "fan2025embodied": {
+    "github": "https://github.com/Embodied-VideoAgent/embodied-videoagent"
+  },
+  "guo2026agentic": {
+    "web": "https://openaccess.thecvf.com/content/CVPR2026/html/Guo_Agentic_Video_Summarization_via_Self-Reflecting_Multimodal_Understanding_CVPR_2026_paper.html"
+  },
+  "han2025roomtour3d": {
+    "github": "https://github.com/roomtour3d/roomtour3d-NaviLLM"
+  },
+  "kim2025salova": {
+    "github": "https://github.com/IVY-LVLM/SALOVA"
+  },
+  "liu2025videomind": {
+    "github": "https://github.com/yeliudev/VideoMind"
+  },
+  "lu2025videoagenttrek": {
+    "github": "https://github.com/xlang-ai/VideoAgentTrek"
+  },
+  "pmlr-v235-fei24a": {
+    "github": "https://github.com/scofield7419/Video-of-Thought",
+    "web": "https://haofei.vip/VoT"
+  },
+  "park2025v": {
+    "web": ""
+  },
+  "song2025modularized": {
+    "github": "https://github.com/song-zh19/MSR-ViR",
+    "web": "https://proceedings.mlr.press/v267/song25g.html"
+  },
+  "tang2026asynchronous": {
+    "web": "https://openaccess.thecvf.com/content/CVPR2026/html/Tang_Asynchronous_Temporal_Modeling_with_Two-Agent_Framework_for_Streaming_Dense_Video_CVPR_2026_paper.html"
+  },
+  "wang2026streambridge": {
+    "github": "https://github.com/apple/ml-streambridge"
+  },
+  "wang2026time": {
+    "github": "https://github.com/xiaomi-research/Time-R1"
+  },
+  "xiao2021next": {
+    "arxiv": "2105.08276"
+  },
+  "xie2026streamrag": {
+    "web": "https://openaccess.thecvf.com/content/CVPR2026/html/Xie_StreamRAG_Enhancing_Real-Time_Video_Understanding_with_Retrieval_Augmentation_CVPR_2026_paper.html"
+  },
+  "yin2026videoarm": {
+    "github": "https://github.com/MILVLG/videoarm"
+  },
+  "yeo2026worldmm": {
+    "github": "https://github.com/wgcyeo/WorldMM"
+  },
+  "zhang2025rewatch": {
+    "github": "https://github.com/alibaba/ReWatch-R1"
+  },
+  "zhang2024internlm": {
+    "github": "https://github.com/InternLM/InternLM-XComposer/tree/main/InternLM-XComposer-2.5-OmniLive"
+  },
+  "zhang2026thinking": {
+    "github": "https://github.com/zhang9302002/ThinkingWithVideos",
+    "web": "https://zhang9302002.github.io/thinkingwithvideos-page"
+  },
+  "zuo2026videolucy": {
+    "github": "https://github.com/worldbench/VideoLucy"
+  }
+}
