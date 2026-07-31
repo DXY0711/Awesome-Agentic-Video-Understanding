@@ -17,6 +17,7 @@ SOURCE_ROOT = WORKSPACE_ROOT / "Article" / "Video_Agent_Survey"
 PAPER_ROOT = WORKSPACE_ROOT / "paper"
 LINK_CACHE = REPO_ROOT / "data" / "paper_links.json"
 LINK_OVERRIDES = REPO_ROOT / "data" / "verified_link_overrides.json"
+RELATED_SURVEYS = REPO_ROOT / "data" / "related_surveys.json"
 
 
 @dataclass
@@ -423,12 +424,17 @@ def build_readme() -> str:
     for path in tex_paths:
         all_cited |= cite_keys(path.read_text(encoding="utf-8"))
 
-    background_groups = {
-        "Foundational Video Networks": ["tran2015learning", "carreira2017quo", "donahue2015long", "bertasius2021space"],
-        "Video Language Models": ["yang2023vid2seq", "ren2024timechat", "song2024moviechat", "huang2024vtimellm"],
-        "Related Surveys": ["nguyen2024video", "madan2024foundation", "tang2025video"],
-        "Adjacent Agentic Areas": ["wang2024lave", "tu2026spagent"],
-    }
+    added_surveys = json.loads(RELATED_SURVEYS.read_text(encoding="utf-8")) if RELATED_SURVEYS.exists() else {}
+    for key, item in added_surveys.items():
+        entries[key] = BibEntry(
+            key=key,
+            entry_type="article",
+            fields={"title": item["title"], "year": item["year"], "journal": item["venue"]},
+        )
+        all_cited.add(key)
+
+    related_surveys = ["nguyen2024video", "madan2024foundation", "tang2025video", *added_surveys]
+    adjacent_candidates = ["wang2024lave", "tu2026spagent"]
     short_names = {
         "tran2015learning": "C3D", "carreira2017quo": "I3D", "donahue2015long": "LRCN",
         "bertasius2021space": "TimeSformer", "yang2023vid2seq": "Vid2Seq", "ren2024timechat": "TimeChat",
@@ -436,6 +442,7 @@ def build_readme() -> str:
         "madan2024foundation": "Video Foundation Models", "tang2025video": "Video Understanding Survey",
         "wang2024lave": "LAVE", "tu2026spagent": "SPAgent",
     }
+    short_names.update({key: item["short_name"] for key, item in added_surveys.items()})
 
     benchmark_names = {
         "gao2017tall": "Charades-STA", "10.1145/3123266.3123427": "MSRVTT-QA",
@@ -455,17 +462,16 @@ def build_readme() -> str:
     }
 
     assigned = {method.key for method in methods}
-    for keys in background_groups.values():
-        assigned.update(keys)
+    adjacent_unclassified = [key for key in adjacent_candidates if key not in assigned]
+    assigned.update(related_surveys)
+    assigned.update(adjacent_unclassified)
     assigned.update(benchmark_names)
-    additional = sorted(all_cited - assigned)
     links = link_metadata(entries, all_cited)
+    for key, item in added_surveys.items():
+        links[key] = {field: item.get(field, "") for field in ["arxiv", "web", "github"]}
 
     lines: list[str] = [
-        "[![Survey](https://img.shields.io/badge/Survey-Agentic%20Video%20Understanding-0b6b4f?style=flat-square)](#agentic-video-understanding-a-survey)",
-        "[![Paper List](https://img.shields.io/badge/Core%20Methods-94-f26b38?style=flat-square)](#1-challenge-to-design-taxonomy)",
-        "[![Benchmarks](https://img.shields.io/badge/Benchmarks-28-1d4ed8?style=flat-square)](#5-benchmarks)",
-        "[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-8b5cf6?style=flat-square)](#contributing)",
+        "[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)",
         "",
         "# 🎬 Agentic Video Understanding: A Survey",
         "",
@@ -483,16 +489,15 @@ def build_readme() -> str:
         "2. **Challenge-to-design taxonomy.** We connect context bottlenecks, evidence sparsity, temporal causality, and multimodal ambiguity to the agentic mechanisms required to address them.",
         "3. **State-space taxonomy.** We organize operative video states as a bag of frames, a temporal sequence, a graph of entities, or an evolving world state.",
         "4. **Learning and supervision.** We consolidate training-free control, supervised imitation, reinforcement learning, trajectory supervision, grounding supervision, and preference or reward signals.",
-        "5. **Curated field map.** We organize 94 core video-agent methods and 28 representative benchmarks in a consistent, updateable paper list.",
         "",
         "## Citation",
         "",
-        "The manuscript is currently anonymized. Please replace the author and venue metadata after public release.",
+        "If you find this survey useful, please cite:",
         "",
         "```bibtex",
-        "@article{anonymous2026agenticvideo,",
+        "@article{deng2026agenticvideo,",
         "  title   = {Agentic Video Understanding: A Survey},",
-        "  author  = {Anonymous Authors},",
+        "  author  = {Xinyu Deng and Siwen Luo and Daochang Liu},",
         "  journal = {Manuscript},",
         "  year    = {2026}",
         "}",
@@ -500,9 +505,7 @@ def build_readme() -> str:
         "",
         "## Table of Contents",
         "",
-        "- [**0. Background and Scope**](#0-background-and-scope)",
-        "  - [Foundational Video Networks](#foundational-video-networks)",
-        "  - [Video Language Models](#video-language-models)",
+        "- [**0. Scope**](#0-scope)",
         "  - [Related Surveys](#related-surveys)",
         "  - [Adjacent Agentic Areas](#adjacent-agentic-areas)",
         "- [**1. Challenge-to-Design Taxonomy**](#1-challenge-to-design-taxonomy)",
@@ -517,17 +520,27 @@ def build_readme() -> str:
         "- [**5. Benchmarks**](#5-benchmarks)",
         "  - [Capability-Oriented Benchmarks](#capability-oriented-benchmarks)",
         "  - [Agent-Oriented Benchmarks](#agent-oriented-benchmarks)",
-        "- [**6. Additional Cited Works**](#6-additional-cited-works)",
         "",
-        "# 0. Background and Scope",
+        "# 0. Scope",
         "",
         "A **video understanding agent** uses video as its primary source and solves a task through adaptive evidence-state construction and action selection. It must select at least one action that changes subsequent evidence access, state update, tool use, interaction, or termination.",
         "",
         "> Papers are ordered chronologically within each section. Core video-agent papers appear exactly once under their primary challenge. Orthogonal dimensions are represented through tags and linked indexes rather than duplicated metadata rows.",
     ]
 
-    for heading, keys in background_groups.items():
-        lines += ["", f"### {heading}", "", "> In chronological order, from the earliest to the latest.", ""]
+    scope_groups = {"Related Surveys": related_surveys}
+    if adjacent_unclassified:
+        scope_groups["Adjacent Agentic Areas"] = adjacent_unclassified
+
+    for heading, keys in scope_groups.items():
+        if heading == "Adjacent Agentic Areas":
+            lines += [
+                "", "### Adjacent Agentic Areas", "",
+                "The survey discusses the following works as neighboring agentic applications, but does not assign them a challenge, state-space paradigm, learning regime, or supervision label. They therefore remain outside the canonical taxonomy tables; once an explicit taxonomy assignment is added to the survey source, the generator will place them only in the corresponding Challenge-to-Design table.",
+                "", "> In chronological order, from the earliest to the latest.", "",
+            ]
+        else:
+            lines += ["", f"### {heading}", "", "Surveys are limited to work that directly overlaps video-language understanding, long or streaming video, and the learning or memory mechanisms used by video agents.", "", "> In chronological order, from the earliest to the latest.", ""]
         lines += table_header()
         for key in sorted(keys, key=lambda item: (entries.get(item, BibEntry(item, "misc", {})).year, short_names.get(item, item).lower())):
             lines.append(row(short_names.get(key, key), key, entries, links))
@@ -613,12 +626,6 @@ def build_readme() -> str:
             lines.append(row(benchmark_names[key], key, entries, links))
         lines += [""]
 
-    lines += ["", "# 6. Additional Cited Works", "", "The following cited works are not part of the 94-row core method table or the benchmark catalog, but are discussed in the survey's scope, learning, or supervision sections.", ""]
-    lines += table_header()
-    for key in sorted(additional, key=lambda item: (entries.get(item, BibEntry(item, "misc", {})).year, entries.get(item, BibEntry(item, "misc", {"title": item})).title.lower())):
-        title = entries.get(key, BibEntry(key, "misc", {"title": key})).title
-        short = title.split(":", 1)[0][:48]
-        lines.append(row(short, key, entries, links))
     lines += ["", "## Contributing", "", "Contributions are welcome. For a new paper, please include:", "", "- title, venue, year, and stable paper URL;", "- arXiv link, project page, and GitHub repository when available;", "- one primary challenge and one state-space paradigm;", "- all applicable learning regimes and supervision signals;", "- one sentence explaining why the method satisfies the survey's agent definition.", "", "<div align=\"center\">", "", "**[⬆ Back to Top](#agentic-video-understanding-a-survey)**", "", "*Generated from the survey LaTeX tables and BibTeX source.*", "", "</div>", ""]
 
     return "\n".join(lines)

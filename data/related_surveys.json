@@ -1,0 +1,47 @@
+{
+  "zou2024seconds": {
+    "short_name": "Long-Video MLLM Survey",
+    "title": "From Seconds to Hours: Reviewing MultiModal Large Language Models on Comprehensive Long Video Understanding",
+    "venue": "arXiv",
+    "year": "2024",
+    "arxiv": "2409.18938",
+    "web": "",
+    "github": "https://github.com/Vincent-ZHQ/Comprehensive-Long-Video-Understanding-Survey"
+  },
+  "liu2025trainingfree": {
+    "short_name": "Training-Free LVU Survey",
+    "title": "Towards Training-Free Long Video Understanding: Methods, Benchmarks, and Open Challenges",
+    "venue": "Vicinagearth",
+    "year": "2025",
+    "arxiv": "",
+    "web": "https://link.springer.com/article/10.1007/s44336-025-00017-w",
+    "github": ""
+  },
+  "tang2025posttraining": {
+    "short_name": "Video-LMM Post-Training Survey",
+    "title": "Video-LMM Post-Training: A Deep Dive into Video Reasoning with Large Multimodal Models",
+    "venue": "arXiv",
+    "year": "2025",
+    "arxiv": "2510.05034",
+    "web": "",
+    "github": "https://github.com/yunlong10/Awesome-Video-LMM-Post-Training"
+  },
+  "li2026streamingsurvey": {
+    "short_name": "Streaming Video Survey",
+    "title": "How to Respond, How to Memorize, How to Be Fast: A Survey of Streaming Video Understanding",
+    "venue": "SSRN",
+    "year": "2026",
+    "arxiv": "",
+    "web": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7008298",
+    "github": ""
+  },
+  "meng2026watch": {
+    "short_name": "Human-View Video Survey",
+    "title": "Watch, Remember, Reason: Human-View Video Understanding with MLLMs",
+    "venue": "arXiv",
+    "year": "2026",
+    "arxiv": "2606.07433",
+    "web": "",
+    "github": "https://github.com/marinero4972/Awesome-HumanView-VideoUnderstanding"
+  }
+}

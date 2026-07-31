@@ -1,7 +1,4 @@
-[![Survey](https://img.shields.io/badge/Survey-Agentic%20Video%20Understanding-0b6b4f?style=flat-square)](#agentic-video-understanding-a-survey)
-[![Paper List](https://img.shields.io/badge/Core%20Methods-94-f26b38?style=flat-square)](#1-challenge-to-design-taxonomy)
-[![Benchmarks](https://img.shields.io/badge/Benchmarks-28-1d4ed8?style=flat-square)](#5-benchmarks)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-8b5cf6?style=flat-square)](#contributing)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 # 🎬 Agentic Video Understanding: A Survey
 
@@ -19,16 +16,15 @@ The survey traces the transition from recognition-centered video networks and fi
 2. **Challenge-to-design taxonomy.** We connect context bottlenecks, evidence sparsity, temporal causality, and multimodal ambiguity to the agentic mechanisms required to address them.
 3. **State-space taxonomy.** We organize operative video states as a bag of frames, a temporal sequence, a graph of entities, or an evolving world state.
 4. **Learning and supervision.** We consolidate training-free control, supervised imitation, reinforcement learning, trajectory supervision, grounding supervision, and preference or reward signals.
-5. **Curated field map.** We organize 94 core video-agent methods and 28 representative benchmarks in a consistent, updateable paper list.
 
 ## Citation
 
-The manuscript is currently anonymized. Please replace the author and venue metadata after public release.
+If you find this survey useful, please cite:
 
 ```bibtex
-@article{anonymous2026agenticvideo,
+@article{deng2026agenticvideo,
   title   = {Agentic Video Understanding: A Survey},
-  author  = {Anonymous Authors},
+  author  = {Xinyu Deng and Siwen Luo and Daochang Liu},
   journal = {Manuscript},
   year    = {2026}
 }
@@ -36,9 +32,7 @@ The manuscript is currently anonymized. Please replace the author and venue meta
 
 ## Table of Contents
 
-- [**0. Background and Scope**](#0-background-and-scope)
-  - [Foundational Video Networks](#foundational-video-networks)
-  - [Video Language Models](#video-language-models)
+- [**0. Scope**](#0-scope)
   - [Related Surveys](#related-surveys)
   - [Adjacent Agentic Areas](#adjacent-agentic-areas)
 - [**1. Challenge-to-Design Taxonomy**](#1-challenge-to-design-taxonomy)
@@ -53,50 +47,34 @@ The manuscript is currently anonymized. Please replace the author and venue meta
 - [**5. Benchmarks**](#5-benchmarks)
   - [Capability-Oriented Benchmarks](#capability-oriented-benchmarks)
   - [Agent-Oriented Benchmarks](#agent-oriented-benchmarks)
-- [**6. Additional Cited Works**](#6-additional-cited-works)
 
-# 0. Background and Scope
+# 0. Scope
 
 A **video understanding agent** uses video as its primary source and solves a task through adaptive evidence-state construction and action selection. It must select at least one action that changes subsequent evidence access, state update, tool use, interaction, or termination.
 
 > Papers are ordered chronologically within each section. Core video-agent papers appear exactly once under their primary challenge. Orthogonal dimensions are represented through tags and linked indexes rather than duplicated metadata rows.
 
-### Foundational Video Networks
-
-> In chronological order, from the earliest to the latest.
-
-| Method | Paper | Venue | arXiv | Web | GitHub |
-|:-:|:-|:-:|:-:|:-:|:-:|
-| <a id="paper-tran2015learning"></a>`C3D` | Learning spatiotemporal features with 3d convolutional networks | ICCV '15 | [![arXiv](https://img.shields.io/badge/arXiv-1412.0767-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/1412.0767) | - | - |
-| <a id="paper-donahue2015long"></a>`LRCN` | Long-term recurrent convolutional networks for visual recognition and description | CVPR '15 | [![arXiv](https://img.shields.io/badge/arXiv-1411.4389-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/1411.4389) | - | - |
-| <a id="paper-carreira2017quo"></a>`I3D` | Quo vadis, action recognition? a new model and the kinetics dataset | CVPR '17 | [![arXiv](https://img.shields.io/badge/arXiv-1705.07750-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/1705.07750) | - | - |
-| <a id="paper-bertasius2021space"></a>`TimeSformer` | Is space-time attention all you need for video understanding? | ICML '21 | [![arXiv](https://img.shields.io/badge/arXiv-2102.05095-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2102.05095) | - | [![GitHub](https://img.shields.io/github/stars/facebookresearch/TimeSformer?style=flat-square&logo=github)](https://github.com/facebookresearch/TimeSformer) |
-
-
-### Video Language Models
-
-> In chronological order, from the earliest to the latest.
-
-| Method | Paper | Venue | arXiv | Web | GitHub |
-|:-:|:-|:-:|:-:|:-:|:-:|
-| <a id="paper-yang2023vid2seq"></a>`Vid2Seq` | Vid2seq: Large-scale pretraining of a visual language model for dense video captioning | CVPR '23 | [![arXiv](https://img.shields.io/badge/arXiv-2302.14115-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2302.14115) | [![Web](https://img.shields.io/badge/Web-Page-f59e0b?style=flat-square&logo=googlechrome&logoColor=white)](https://antoyang.github.io/vid2seq.html) | - |
-| <a id="paper-song2024moviechat"></a>`MovieChat` | Moviechat: From dense token to sparse memory for long video understanding | CVPR '24 | [![arXiv](https://img.shields.io/badge/arXiv-2307.16449-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2307.16449) | [![Web](https://img.shields.io/badge/Web-Page-f59e0b?style=flat-square&logo=googlechrome&logoColor=white)](https://rese1f.github.io/MovieChat) | - |
-| <a id="paper-ren2024timechat"></a>`TimeChat` | Timechat: A time-sensitive multimodal large language model for long video understanding | CVPR '24 | [![arXiv](https://img.shields.io/badge/arXiv-2312.02051-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2312.02051) | - | [![GitHub](https://img.shields.io/github/stars/RenShuhuai-Andy/TimeChat?style=flat-square&logo=github)](https://github.com/RenShuhuai-Andy/TimeChat) |
-| <a id="paper-huang2024vtimellm"></a>`VTimeLLM` | Vtimellm: Empower llm to grasp video moments | CVPR '24 | [![arXiv](https://img.shields.io/badge/arXiv-2311.18445-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2311.18445) | - | - |
-
-
 ### Related Surveys
 
+Surveys are limited to work that directly overlaps video-language understanding, long or streaming video, and the learning or memory mechanisms used by video agents.
+
 > In chronological order, from the earliest to the latest.
 
 | Method | Paper | Venue | arXiv | Web | GitHub |
 |:-:|:-|:-:|:-:|:-:|:-:|
+| <a id="paper-zou2024seconds"></a>`Long-Video MLLM Survey` | From Seconds to Hours: Reviewing MultiModal Large Language Models on Comprehensive Long Video Understanding | arXiv '24 | [![arXiv](https://img.shields.io/badge/arXiv-2409.18938-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2409.18938) | - | [![GitHub](https://img.shields.io/github/stars/Vincent-ZHQ/Comprehensive-Long-Video-Understanding-Survey?style=flat-square&logo=github)](https://github.com/Vincent-ZHQ/Comprehensive-Long-Video-Understanding-Survey) |
 | <a id="paper-madan2024foundation"></a>`Video Foundation Models` | Foundation models for video understanding: A survey | arXiv '24 | [![arXiv](https://img.shields.io/badge/arXiv-2405.03770-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2405.03770) | - | [![GitHub](https://img.shields.io/github/stars/NeeluMadan/ViFM_Survey?style=flat-square&logo=github)](https://github.com/NeeluMadan/ViFM_Survey.git) |
 | <a id="paper-nguyen2024video"></a>`Video-LLM Survey` | Video-language understanding: A survey from model architecture, model training, and data perspectives | ACL '24 | [![arXiv](https://img.shields.io/badge/arXiv-2406.05615-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2406.05615) | - | [![GitHub](https://img.shields.io/github/stars/nguyentthong/video-language-understanding?style=flat-square&logo=github)](https://github.com/nguyentthong/video-language-understanding) |
+| <a id="paper-liu2025trainingfree"></a>`Training-Free LVU Survey` | Towards Training-Free Long Video Understanding: Methods, Benchmarks, and Open Challenges | Vicinagearth '25 | - | [![Web](https://img.shields.io/badge/Web-Page-f59e0b?style=flat-square&logo=googlechrome&logoColor=white)](https://link.springer.com/article/10.1007/s44336-025-00017-w) | - |
 | <a id="paper-tang2025video"></a>`Video Understanding Survey` | Video understanding with large language models: A survey | IEEE Transactions on Circuits and Systems for Video Technology '25 | [![arXiv](https://img.shields.io/badge/arXiv-2312.17432-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2312.17432) | - | [![GitHub](https://img.shields.io/github/stars/yunlong10/Awesome-LLMs-for-Video-Understanding?style=flat-square&logo=github)](https://github.com/yunlong10/Awesome-LLMs-for-Video-Understanding) |
+| <a id="paper-tang2025posttraining"></a>`Video-LMM Post-Training Survey` | Video-LMM Post-Training: A Deep Dive into Video Reasoning with Large Multimodal Models | arXiv '25 | [![arXiv](https://img.shields.io/badge/arXiv-2510.05034-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2510.05034) | - | [![GitHub](https://img.shields.io/github/stars/yunlong10/Awesome-Video-LMM-Post-Training?style=flat-square&logo=github)](https://github.com/yunlong10/Awesome-Video-LMM-Post-Training) |
+| <a id="paper-meng2026watch"></a>`Human-View Video Survey` | Watch, Remember, Reason: Human-View Video Understanding with MLLMs | arXiv '26 | [![arXiv](https://img.shields.io/badge/arXiv-2606.07433-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2606.07433) | - | [![GitHub](https://img.shields.io/github/stars/marinero4972/Awesome-HumanView-VideoUnderstanding?style=flat-square&logo=github)](https://github.com/marinero4972/Awesome-HumanView-VideoUnderstanding) |
+| <a id="paper-li2026streamingsurvey"></a>`Streaming Video Survey` | How to Respond, How to Memorize, How to Be Fast: A Survey of Streaming Video Understanding | SSRN '26 | - | [![Web](https://img.shields.io/badge/Web-Page-f59e0b?style=flat-square&logo=googlechrome&logoColor=white)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7008298) | - |
 
 
 ### Adjacent Agentic Areas
+
+The survey discusses the following works as neighboring agentic applications, but does not assign them a challenge, state-space paradigm, learning regime, or supervision label. They therefore remain outside the canonical taxonomy tables; once an explicit taxonomy assignment is added to the survey source, the generator will place them only in the corresponding Challenge-to-Design table.
 
 > In chronological order, from the earliest to the latest.
 
@@ -425,18 +403,6 @@ Benchmarks are grouped by their primary role in agentic video understanding.
 | <a id="paper-lin2026streamingbench"></a>`StreamingBench` | Streamingbench: Assessing the gap for mllms to achieve streaming video understanding | ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) '26 | [![arXiv](https://img.shields.io/badge/arXiv-2411.03628-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2411.03628) | - | [![GitHub](https://img.shields.io/github/stars/THUNLP-MT/StreamingBench?style=flat-square&logo=github)](https://github.com/THUNLP-MT/StreamingBench) |
 | <a id="paper-liu2026watching"></a>`VideoDR` | Watching, reasoning, and searching: A video deep research benchmark on open web for agentic video reasoning | arXiv '26 | [![arXiv](https://img.shields.io/badge/arXiv-2601.06943-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2601.06943) | - | [![GitHub](https://img.shields.io/github/stars/QuantaAlpha/VideoDR-Benchmark?style=flat-square&logo=github)](https://github.com/QuantaAlpha/VideoDR-Benchmark) |
 
-
-# 6. Additional Cited Works
-
-The following cited works are not part of the 94-row core method table or the benchmark catalog, but are discussed in the survey's scope, learning, or supervision sections.
-
-| Method | Paper | Venue | arXiv | Web | GitHub |
-|:-:|:-|:-:|:-:|:-:|:-:|
-| <a id="paper-ma2024hierarchical"></a>`Hierarchical diffusion policy for kinematics-awa` | Hierarchical diffusion policy for kinematics-aware multi-task robotic manipulation | CVPR '24 | [![arXiv](https://img.shields.io/badge/arXiv-2403.03890-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2403.03890) | [![Web](https://img.shields.io/badge/Web-Page-f59e0b?style=flat-square&logo=googlechrome&logoColor=white)](https://yusufma03.github.io/projects/hdp) | - |
-| <a id="paper-zhao2025drivedreamer4d"></a>`Drivedreamer4d` | Drivedreamer4d: World models are effective data machines for 4d driving scene representation | CVPR '25 | [![arXiv](https://img.shields.io/badge/arXiv-2410.13571-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2410.13571) | [![Web](https://img.shields.io/badge/Web-Page-f59e0b?style=flat-square&logo=googlechrome&logoColor=white)](https://drivedreamer4d.github.io) | - |
-| <a id="paper-hassan2025gem"></a>`Gem` | Gem: A generalizable ego-vision multimodal world model for fine-grained ego-motion, object dynamics, and scene composition control | CVPR '25 | [![arXiv](https://img.shields.io/badge/arXiv-2412.11198-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2412.11198) | - | - |
-| <a id="paper-park2026deepvideo"></a>`Deepvideo-r1` | Deepvideo-r1: Video reinforcement fine-tuning via difficulty-aware regressive grpo | NeurIPS '26 | [![arXiv](https://img.shields.io/badge/arXiv-2506.07464-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2506.07464) | - | [![GitHub](https://img.shields.io/github/stars/mlvlab/DeepVideoR1?style=flat-square&logo=github)](https://github.com/mlvlab/DeepVideoR1) |
-| <a id="paper-wang2026streameqa"></a>`Streameqa` | Streameqa: Towards streaming video understanding for embodied scenarios | CVPR '26 | [![arXiv](https://img.shields.io/badge/arXiv-2512.04451-b31b1b?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2512.04451) | - | [![GitHub](https://img.shields.io/github/stars/MrYF-Wang/StreamEQA?style=flat-square&logo=github)](https://github.com/MrYF-Wang/StreamEQA) |
 
 ## Contributing
 
