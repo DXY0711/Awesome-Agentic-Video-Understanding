@@ -22,11 +22,12 @@ The survey traces the transition from recognition-centered video networks and fi
 If you find this survey useful, please cite:
 
 ```bibtex
-@article{deng2026agenticvideo,
-  title   = {Agentic Video Understanding: A Survey},
-  author  = {Xinyu Deng and Siwen Luo and Daochang Liu},
-  journal = {Manuscript},
-  year    = {2026}
+@misc{deng2026agenticvideo,
+  title  = {Agentic Video Understanding: A Survey},
+  author = {Deng, Xinyu and Luo, Siwen and Liu, Daochang},
+  year   = {2026},
+  note   = {Manuscript},
+  url    = {https://github.com/<OWNER>/<REPOSITORY>/blob/main/Paper/Video_Agent_Survey.pdf}
 }
 ```
 
