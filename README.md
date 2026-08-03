@@ -27,7 +27,7 @@ If you find this survey useful, please cite:
   author = {Deng, Xinyu and Luo, Siwen and Liu, Daochang},
   year   = {2026},
   note   = {Manuscript},
-  url    = {https://github.com/<OWNER>/<REPOSITORY>/blob/main/Paper/Video_Agent_Survey.pdf}
+  url    = {https://github.com/DXY0711/Awesome-Agentic-Video-Understanding/blob/main/Paper/Video_Agent_Survey.pdf}
 }
 ```
 
