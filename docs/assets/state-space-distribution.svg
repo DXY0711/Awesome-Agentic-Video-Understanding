@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="270" viewBox="0 0 460 270" role="img" aria-labelledby="chart-title chart-desc">
+  <title id="chart-title">State-Space Distribution</title>
+  <desc id="chart-desc">P-I · Frames: 13.8%; P-II · Sequence: 34.0%; P-III · Graph: 31.9%; P-IV · World State: 20.2%</desc>
+  <rect width="460" height="270" rx="14" fill="#ffffff"/>
+  <style>
+    .title { fill: #0f172a; font: 600 17px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .subtitle { fill: #64748b; font: 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .label { fill: #334155; font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .pct { fill: #0f172a; font: 600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .center { fill: #0f172a; font: 600 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  </style>
+  <text x="230" y="28" text-anchor="middle" class="title">State-Space Distribution</text>
+  <text x="230" y="47" text-anchor="middle" class="subtitle">Share of methods</text>
+  <path d="M 118.00 60.00 A 82 82 0 0 1 180.62 89.06 L 154.66 111.01 A 48 48 0 0 0 118.00 94.00 Z" fill="#2563eb" stroke="#ffffff" stroke-width="2"/><path d="M 180.62 89.06 A 82 82 0 0 1 128.93 223.27 L 124.40 189.57 A 48 48 0 0 0 154.66 111.01 Z" fill="#f59e0b" stroke="#ffffff" stroke-width="2"/><path d="M 128.93 223.27 A 82 82 0 0 1 39.68 117.71 L 72.16 127.78 A 48 48 0 0 0 124.40 189.57 Z" fill="#10b981" stroke="#ffffff" stroke-width="2"/><path d="M 39.68 117.71 A 82 82 0 0 1 118.00 60.00 L 118.00 94.00 A 48 48 0 0 0 72.16 127.78 Z" fill="#8b5cf6" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="118" cy="142" r="47" fill="#ffffff"/>
+  <text x="118" y="148" text-anchor="middle" class="center">100%</text>
+  <rect x="230" y="76" width="13" height="13" rx="3" fill="#2563eb"/><text x="252" y="87" class="label">P-I · Frames</text><text x="432" y="87" text-anchor="end" class="pct">13.8%</text><rect x="230" y="118" width="13" height="13" rx="3" fill="#f59e0b"/><text x="252" y="129" class="label">P-II · Sequence</text><text x="432" y="129" text-anchor="end" class="pct">34.0%</text><rect x="230" y="160" width="13" height="13" rx="3" fill="#10b981"/><text x="252" y="171" class="label">P-III · Graph</text><text x="432" y="171" text-anchor="end" class="pct">31.9%</text><rect x="230" y="202" width="13" height="13" rx="3" fill="#8b5cf6"/><text x="252" y="213" class="label">P-IV · World State</text><text x="432" y="213" text-anchor="end" class="pct">20.2%</text>
+</svg>

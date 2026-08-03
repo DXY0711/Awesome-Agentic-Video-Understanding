@@ -2,9 +2,11 @@ from __future__ import annotations
 
 import re
 import json
+import math
 from collections import defaultdict
 from dataclasses import dataclass, field
 from difflib import SequenceMatcher
+from html import escape
 from pathlib import Path
 from urllib.parse import quote
 
@@ -18,6 +20,7 @@ PAPER_ROOT = WORKSPACE_ROOT / "paper"
 LINK_CACHE = REPO_ROOT / "data" / "paper_links.json"
 LINK_OVERRIDES = REPO_ROOT / "data" / "verified_link_overrides.json"
 RELATED_SURVEYS = REPO_ROOT / "data" / "related_surveys.json"
+ASSET_ROOT = REPO_ROOT / "docs" / "assets"
 
 
 @dataclass
@@ -385,17 +388,122 @@ def table_header() -> list[str]:
     ]
 
 
+def write_marker_icon(filename: str, fill: str, stroke: str, label: str) -> None:
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" role="img" aria-label="{escape(label)}">
+  <title>{escape(label)}</title>
+  <path d="M10 1.7l2.46 4.98 5.5.8-3.98 3.88.94 5.48L10 14.25l-4.92 2.59.94-5.48L2.04 7.48l5.5-.8L10 1.7z" fill="{fill}" stroke="{stroke}" stroke-width="1.2" stroke-linejoin="round"/>
+</svg>
+'''
+    (ASSET_ROOT / filename).write_text(svg, encoding="utf-8", newline="\n")
+
+
+def write_pie_chart(
+    filename: str,
+    title: str,
+    subtitle: str,
+    labels: list[str],
+    values: list[int],
+) -> None:
+    colors = ["#2563eb", "#f59e0b", "#10b981", "#8b5cf6", "#ef4444", "#0891b2"]
+    total = sum(values)
+    width, height = 460, 270
+    cx, cy, radius, inner = 118, 142, 82, 48
+    start_angle = -90.0
+    paths: list[str] = []
+    legend: list[str] = []
+
+    for index, (label, value) in enumerate(zip(labels, values)):
+        fraction = value / total if total else 0
+        end_angle = start_angle + fraction * 360
+        start_rad = math.radians(start_angle)
+        end_rad = math.radians(end_angle)
+        x1, y1 = cx + radius * math.cos(start_rad), cy + radius * math.sin(start_rad)
+        x2, y2 = cx + radius * math.cos(end_rad), cy + radius * math.sin(end_rad)
+        ix1, iy1 = cx + inner * math.cos(start_rad), cy + inner * math.sin(start_rad)
+        ix2, iy2 = cx + inner * math.cos(end_rad), cy + inner * math.sin(end_rad)
+        large_arc = 1 if fraction > 0.5 else 0
+        color = colors[index % len(colors)]
+        paths.append(
+            f'<path d="M {x1:.2f} {y1:.2f} A {radius} {radius} 0 {large_arc} 1 {x2:.2f} {y2:.2f} '
+            f'L {ix2:.2f} {iy2:.2f} A {inner} {inner} 0 {large_arc} 0 {ix1:.2f} {iy1:.2f} Z" '
+            f'fill="{color}" stroke="#ffffff" stroke-width="2"/>'
+        )
+        legend_y = 87 + index * 42
+        legend.append(f'<rect x="230" y="{legend_y - 11}" width="13" height="13" rx="3" fill="{color}"/>')
+        legend.append(f'<text x="252" y="{legend_y}" class="label">{escape(label)}</text>')
+        legend.append(f'<text x="432" y="{legend_y}" text-anchor="end" class="pct">{fraction * 100:.1f}%</text>')
+        start_angle = end_angle
+
+    description = "; ".join(
+        f"{label}: {(value / total * 100 if total else 0):.1f}%" for label, value in zip(labels, values)
+    )
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="chart-title chart-desc">
+  <title id="chart-title">{escape(title)}</title>
+  <desc id="chart-desc">{escape(description)}</desc>
+  <rect width="{width}" height="{height}" rx="14" fill="#ffffff"/>
+  <style>
+    .title {{ fill: #0f172a; font: 600 17px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
+    .subtitle {{ fill: #64748b; font: 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
+    .label {{ fill: #334155; font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
+    .pct {{ fill: #0f172a; font: 600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
+    .center {{ fill: #0f172a; font: 600 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
+  </style>
+  <text x="230" y="28" text-anchor="middle" class="title">{escape(title)}</text>
+  <text x="230" y="47" text-anchor="middle" class="subtitle">{escape(subtitle)}</text>
+  {''.join(paths)}
+  <circle cx="{cx}" cy="{cy}" r="{inner - 1}" fill="#ffffff"/>
+  <text x="{cx}" y="{cy + 6}" text-anchor="middle" class="center">100%</text>
+  {''.join(legend)}
+</svg>
+'''
+    (ASSET_ROOT / filename).write_text(svg, encoding="utf-8", newline="\n")
+
+
+def taxonomy_overview_table(
+    headers: tuple[str, str, str],
+    rows: list[tuple[str, str, str]],
+    chart_filename: str,
+    chart_alt: str,
+) -> list[str]:
+    lines = [
+        '<table>',
+        '  <thead>',
+        f'    <tr><th>{escape(headers[0])}</th><th>{escape(headers[1])}</th><th>{escape(headers[2])}</th><th>Percentage distribution</th></tr>',
+        '  </thead>',
+        '  <tbody>',
+    ]
+    for index, (code, name, description) in enumerate(rows):
+        chart_cell = ""
+        if index == 0:
+            chart_cell = (
+                f'<td rowspan="{len(rows)}" width="42%" align="center" valign="middle">'
+                f'<img src="docs/assets/{chart_filename}" width="440" alt="{escape(chart_alt)}"></td>'
+            )
+        lines.append(
+            f'    <tr><td align="center"><strong>{escape(code)}</strong></td>'
+            f'<td>{escape(name)}</td><td>{escape(description)}</td>{chart_cell}</tr>'
+        )
+    lines += ['  </tbody>', '</table>']
+    return lines
+
+
 def mark(active: bool) -> str:
-    return "✓" if active else "–"
+    filename = "star-active.svg" if active else "star-inactive.svg"
+    label = "Applies" if active else "Does not apply"
+    return f'<img src="docs/assets/{filename}" width="16" alt="{label}">'
 
 
 def taxonomy_matrix(methods: list[Method]) -> list[str]:
     lines = [
-        "| Method | Year | Challenge | State Space | TF | SFT | RL | Traj. | Ground. | Reward |",
-        "|:-|:-:|:-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|",
+        '<table>',
+        '  <thead>',
+        '    <tr><th rowspan="2">Method</th><th rowspan="2">Year</th><th rowspan="2">Challenge</th><th rowspan="2">State Space</th><th colspan="3">Learning Taxonomy</th><th colspan="3">Supervision Taxonomy</th></tr>',
+        '    <tr><th>TF</th><th>SFT</th><th>RL</th><th>Traj.</th><th>Ground.</th><th>Reward</th></tr>',
+        '  </thead>',
+        '  <tbody>',
     ]
     for method in sorted(methods, key=lambda item: (item.year, item.method.lower())):
-        linked = f"[`{method.method}`](#{slug(method.key)})"
+        linked = f'<a href="#{slug(method.key)}"><code>{escape(method.method)}</code></a>'
         paradigm = method.paradigm.replace("Paradigm ", "P-")
         values = [
             mark("Training-Free" in method.learning),
@@ -405,7 +513,12 @@ def taxonomy_matrix(methods: list[Method]) -> list[str]:
             mark("Grounding" in method.supervision),
             mark("Reward" in method.supervision),
         ]
-        lines.append(f"| {linked} | {method.year} | {method.challenge} | {paradigm} | " + " | ".join(values) + " |")
+        cells = "".join(f'<td align="center">{value}</td>' for value in values)
+        lines.append(
+            f'    <tr><td>{linked}</td><td align="center">{method.year}</td><td>{escape(method.challenge)}</td>'
+            f'<td align="center">{escape(paradigm)}</td>{cells}</tr>'
+        )
+    lines += ['  </tbody>', '</table>']
     return lines
 
 
@@ -413,6 +526,42 @@ def build_readme() -> str:
     entries = parse_bibtex(SOURCE_ROOT / "video_understanding_agent_references.bib")
     methods = parse_methods(SOURCE_ROOT / "images" / "method_paper_master_table_main.tex")
     methods += parse_methods(SOURCE_ROOT / "images" / "method_paper_master_table_appendix.tex")
+
+    ASSET_ROOT.mkdir(parents=True, exist_ok=True)
+    write_marker_icon("star-active.svg", "#fbbf24", "#d97706", "Applies")
+    write_marker_icon("star-inactive.svg", "#d1d5db", "#9ca3af", "Does not apply")
+
+    paradigm_chart_labels = ["P-I · Frames", "P-II · Sequence", "P-III · Graph", "P-IV · World State"]
+    paradigm_chart_values = [
+        sum(method.paradigm == paradigm for method in methods)
+        for paradigm in ["Paradigm I", "Paradigm II", "Paradigm III", "Paradigm IV"]
+    ]
+    learning_chart_labels = ["Training-Free", "SFT", "RL"]
+    learning_chart_values = [sum(label in method.learning for method in methods) for label in learning_chart_labels]
+    supervision_chart_labels = ["Trajectory", "Grounding", "Reward"]
+    supervision_chart_values = [sum(label in method.supervision for method in methods) for label in supervision_chart_labels]
+
+    write_pie_chart(
+        "state-space-distribution.svg",
+        "State-Space Distribution",
+        "Share of methods",
+        paradigm_chart_labels,
+        paradigm_chart_values,
+    )
+    write_pie_chart(
+        "learning-distribution.svg",
+        "Learning Distribution",
+        "Share of recorded learning labels",
+        learning_chart_labels,
+        learning_chart_values,
+    )
+    write_pie_chart(
+        "supervision-distribution.svg",
+        "Supervision Distribution",
+        "Share of recorded supervision labels",
+        supervision_chart_labels,
+        supervision_chart_values,
+    )
 
     tex_paths = [
         SOURCE_ROOT / "main.tex",
@@ -573,12 +722,17 @@ def build_readme() -> str:
     lines += [
         "", "# 2. State-Space Paradigms", "",
         "The four paradigms describe the operative state exposed to the agent. The complete method-level assignments appear once in the taxonomy matrix below.", "",
-        "| Code | State-space view | Operational meaning | Methods |",
-        "|:-:|:-|:-|:-:|",
     ]
-    for paradigm, (heading, description) in paradigm_descriptions.items():
-        subset = [method for method in methods if method.paradigm == paradigm]
-        lines.append(f"| **{paradigm.replace('Paradigm ', 'P-')}** | {heading.split(': ', 1)[1]} | {description} | **{len(subset)}** |")
+    state_rows = [
+        (paradigm.replace("Paradigm ", "P-"), heading.split(": ", 1)[1], description)
+        for paradigm, (heading, description) in paradigm_descriptions.items()
+    ]
+    lines += taxonomy_overview_table(
+        ("Code", "State-space view", "Operational meaning"),
+        state_rows,
+        "state-space-distribution.svg",
+        "Pie chart showing the percentage distribution of the four state-space paradigms",
+    )
 
     learning_descriptions = {
         "Training-Free": ("Training-Free and Inference-Time Control", "Prompts, tools, retrieval procedures, memory rules, verification, waiting, and stopping criteria specify agent behavior at inference time."),
@@ -587,13 +741,18 @@ def build_readme() -> str:
     }
     lines += [
         "", "# 3. Learning Paradigms", "",
-        "Learning regimes are multi-label: one method may combine supervised initialization, reinforcement learning, and inference-time control.", "",
-        "| Code | Learning regime | What is optimized or specified | Methods |",
-        "|:-:|:-|:-|:-:|",
+        "Learning regimes are multi-label: one method may combine supervised initialization, reinforcement learning, and inference-time control. The pie chart therefore reports each label's share of all recorded learning assignments.", "",
     ]
-    for label, (heading, description) in learning_descriptions.items():
-        subset = [method for method in methods if label in method.learning]
-        lines.append(f"| **{label}** | {heading} | {description} | **{len(subset)}** |")
+    learning_rows = [
+        (label, heading, description)
+        for label, (heading, description) in learning_descriptions.items()
+    ]
+    lines += taxonomy_overview_table(
+        ("Code", "Learning regime", "What is optimized or specified"),
+        learning_rows,
+        "learning-distribution.svg",
+        "Pie chart showing the percentage distribution of recorded learning labels",
+    )
 
     supervision_descriptions = {
         "Trajectory": ("Trajectory Supervision", "Step-by-step observations, tool calls, state changes, revisions, failures, and stopping decisions."),
@@ -602,17 +761,22 @@ def build_readme() -> str:
     }
     lines += [
         "", "# 4. Data and Supervision", "",
-        "The former Appendix material is promoted here as a first-class part of the taxonomy. Supervision signals are also multi-label.", "",
-        "| Code | Supervision signal | What the signal contains | Methods |",
-        "|:-:|:-|:-|:-:|",
+        "The former Appendix material is promoted here as a first-class part of the taxonomy. Supervision signals are also multi-label, so the pie chart reports each label's share of all recorded supervision assignments.", "",
     ]
-    for label, (heading, description) in supervision_descriptions.items():
-        subset = [method for method in methods if label in method.supervision]
-        lines.append(f"| **{label}** | {heading} | {description} | **{len(subset)}** |")
+    supervision_rows = [
+        (label, heading, description)
+        for label, (heading, description) in supervision_descriptions.items()
+    ]
+    lines += taxonomy_overview_table(
+        ("Code", "Supervision signal", "What the signal contains"),
+        supervision_rows,
+        "supervision-distribution.svg",
+        "Pie chart showing the percentage distribution of recorded supervision labels",
+    )
     lines += [
         "", "### Complete Taxonomy Matrix", "",
         "Each method appears here as a compact linked index. Click a method name to jump to its unique paper record in the Challenge-to-Design catalog.", "",
-        "**Legend:** TF = training-free control; SFT = supervised fine-tuning; RL = reinforcement learning; Traj. = trajectory supervision; Ground. = grounding supervision.", "",
+        '**Legend:** <img src="docs/assets/star-active.svg" width="16" alt="Applies"> applies; <img src="docs/assets/star-inactive.svg" width="16" alt="Does not apply"> does not apply. TF = training-free control; SFT = supervised fine-tuning; RL = reinforcement learning; Traj. = trajectory supervision; Ground. = grounding supervision.', "",
     ]
     lines += taxonomy_matrix(methods)
 
