@@ -2,6 +2,12 @@
 
 # 🎬 Agentic Video Understanding: A Survey
 
+<div align="center">
+
+[**📄 Paper**](Paper/Video_Agent_Survey.pdf) · [**📎 Appendix**](Paper/Appendix.pdf) · [**arXiv**](https://arxiv.org/abs/2609.31713)
+
+</div>
+
 | <img width="100%" src="docs/assets/figure1.png" alt="From video networks and Video LLMs to video agents"> |
 |:--:|
 | **From passive video processing to adaptive action control.** |
@@ -26,8 +32,11 @@ If you find this survey useful, please cite:
   title  = {Agentic Video Understanding: A Survey},
   author = {Deng, Xinyu and Luo, Siwen and Liu, Daochang},
   year   = {2026},
-  note   = {Manuscript},
-  url    = {https://github.com/DXY0711/Awesome-Agentic-Video-Understanding/blob/main/Paper/Video_Agent_Survey.pdf}
+  note   = {Accepted to DICTA 2026},
+  eprint = {2609.31713},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CV},
+  url    = {https://arxiv.org/abs/2609.31713}
 }
 ```
 
