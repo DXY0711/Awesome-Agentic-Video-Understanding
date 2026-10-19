@@ -132,6 +132,16 @@
     "local_pdf": "APPO Attention-guided Perception Policy Optimization for Video Reasoning.pdf",
     "web": ""
   },
+  "durante2026tracer": {
+    "arxiv": "2610.21266",
+    "evidence": [
+      "arXiv abstract page",
+      "GitHub stated in paper"
+    ],
+    "github": "https://github.com/zanedurante/tracer-harness",
+    "local_pdf": "",
+    "web": ""
+  },
   "fan2024videoagent": {
     "arxiv": "2403.11481",
     "evidence": [
@@ -162,6 +172,16 @@
     ],
     "github": "https://github.com/open-compass/VLMEvalKit",
     "local_pdf": "MMBench-Video A Long-Form Multi-Shot Benchmark for Holistic Video Understanding.pdf",
+    "web": ""
+  },
+  "fang2026videodeepresearch": {
+    "arxiv": "2608.03979",
+    "evidence": [
+      "arXiv abstract page",
+      "GitHub stated in paper"
+    ],
+    "github": "https://github.com/Osilly/Vision-DeepResearch",
+    "local_pdf": "",
     "web": ""
   },
   "feng2026video": {
@@ -214,6 +234,17 @@
     "github": "",
     "local_pdf": "Agentic Video Intelligence A Flexible Framework for Advanced Video Exploration and Understanding.pdf",
     "web": ""
+  },
+  "gao2026videosearcher": {
+    "arxiv": "2607.02927",
+    "evidence": [
+      "arXiv abstract page",
+      "project page stated in paper",
+      "GitHub stated in paper"
+    ],
+    "github": "https://github.com/Stephen-gzk/VideoSearcher",
+    "local_pdf": "",
+    "web": "https://stephen-gzk.github.io/VideoSearcher-website/"
   },
   "geng2025longvale": {
     "arxiv": "2411.19772",
@@ -569,6 +600,26 @@
     "local_pdf": "Egoschema A diagnostic benchmark for very long-form video language understanding.pdf",
     "web": "http://egoschema.github.io"
   },
+  "meng2026openo3v2": {
+    "arxiv": "2610.17656",
+    "evidence": [
+      "arXiv abstract page",
+      "project page stated in paper"
+    ],
+    "github": "",
+    "local_pdf": "",
+    "web": "https://msalab-pku.github.io/projects/Open-o3-Video-v2"
+  },
+  "min2024morevqa": {
+    "arxiv": "2404.06511",
+    "evidence": [
+      "arXiv abstract page",
+      "project page stated in paper"
+    ],
+    "github": "",
+    "local_pdf": "",
+    "web": "http://juhongm999.github.io/morevqa"
+  },
   "nguyen2024video": {
     "arxiv": "2406.05615",
     "evidence": [],
@@ -745,6 +796,16 @@
     "local_pdf": "Modularized Self-Reflected Video Reasoner for Multimodal LLM with Application to Video Question Answering.pdf",
     "web": "https://proceedings.mlr.press/v267/song25g.html"
   },
+  "sun2026deltastreamer": {
+    "arxiv": "2610.19849",
+    "evidence": [
+      "arXiv abstract page",
+      "project page stated in paper"
+    ],
+    "github": "",
+    "local_pdf": "",
+    "web": "https://bbbbchan.github.io/DeltaStreamer/"
+  },
   "tang2025video": {
     "arxiv": "2312.17432",
     "evidence": [
@@ -764,6 +825,16 @@
     "local_pdf": "Asynchronous temporal modeling with two-agent framework for streaming dense video captioning.pdf",
     "web": "https://openaccess.thecvf.com/content/CVPR2026/html/Tang_Asynchronous_Temporal_Modeling_with_Two-Agent_Framework_for_Streaming_Dense_Video_CVPR_2026_paper.html"
   },
+  "tian2025egor1": {
+    "arxiv": "2506.13654",
+    "evidence": [
+      "arXiv abstract page",
+      "project page stated in paper"
+    ],
+    "github": "",
+    "local_pdf": "",
+    "web": "https://egolife-ai.github.io/Ego-R1/"
+  },
   "tran2015learning": {
     "arxiv": "1412.0767",
     "evidence": [],
@@ -777,6 +848,16 @@
     "github": "",
     "local_pdf": "",
     "web": ""
+  },
+  "wang2023chatvideo": {
+    "arxiv": "2304.14407",
+    "evidence": [
+      "arXiv abstract page",
+      "project page stated in paper"
+    ],
+    "github": "",
+    "local_pdf": "",
+    "web": "https://www.wangjunke.info/ChatVideo/"
   },
   "wang2024lave": {
     "arxiv": "2402.10294",
@@ -794,6 +875,26 @@
     "github": "",
     "local_pdf": "VideoAgent Long-Form Video Understanding with Large Language Model as Agent.pdf",
     "web": "https://wxh1996.github.io/VideoAgent-Website"
+  },
+  "wang2024videotree": {
+    "arxiv": "2405.19209",
+    "evidence": [
+      "arXiv abstract page",
+      "project page stated in paper"
+    ],
+    "github": "",
+    "local_pdf": "",
+    "web": "https://videotree2024.github.io/"
+  },
+  "wang2025active": {
+    "arxiv": "2512.05774",
+    "evidence": [
+      "arXiv abstract page",
+      "project page stated in paper"
+    ],
+    "github": "",
+    "local_pdf": "",
+    "web": "https://activevideoperception.github.io/"
   },
   "wang2025lvbench": {
     "arxiv": "2406.08035",
@@ -893,6 +994,16 @@
     ],
     "github": "https://github.com/SpXace/VideoChat-A1",
     "local_pdf": "VideoChat-A1 Thinking with Long Videos by Chain-of-Shot Reasoning.pdf",
+    "web": ""
+  },
+  "wang2026vto": {
+    "arxiv": "2608.08219",
+    "evidence": [
+      "arXiv abstract page",
+      "GitHub stated in paper"
+    ],
+    "github": "https://github.com/MICLAB-BUPT/VTO",
+    "local_pdf": "",
     "web": ""
   },
   "wu2024longvideobench": {
@@ -996,6 +1107,16 @@
     "github": "",
     "local_pdf": "Towards Sparse Video Understanding and Reasoning.pdf",
     "web": "https://sparsevideounderstanding.github.io"
+  },
+  "xu2026videoevoharness": {
+    "arxiv": "2610.15389",
+    "evidence": [
+      "arXiv abstract page",
+      "GitHub stated in paper"
+    ],
+    "github": "https://github.com/Wei-Xin-Xu/VideoEvoHarness",
+    "local_pdf": "",
+    "web": ""
   },
   "yan2026proact": {
     "arxiv": "2603.03447",
@@ -1194,6 +1315,15 @@
     "local_pdf": "Hierarchical video-moment retrieval and step-captioning.pdf",
     "web": "https://hirest-cvpr2023.github.io"
   },
+  "zeng2026properagent": {
+    "arxiv": "2610.22671",
+    "evidence": [
+      "arXiv abstract page"
+    ],
+    "github": "",
+    "local_pdf": "",
+    "web": ""
+  },
   "zhang2024internlm": {
     "arxiv": "2412.09596",
     "evidence": [
@@ -1287,6 +1417,15 @@
     "local_pdf": "Deep Video Discovery Agentic Search with Tool Use for Long-form Video Understanding.pdf",
     "web": ""
   },
+  "zhang2026eflow": {
+    "arxiv": "2607.00867",
+    "evidence": [
+      "arXiv abstract page"
+    ],
+    "github": "",
+    "local_pdf": "",
+    "web": ""
+  },
   "zhang2026eva": {
     "arxiv": "2603.22918",
     "evidence": [
@@ -1327,6 +1466,15 @@
     "github": "",
     "local_pdf": "OmniPro A Comprehensive Benchmark for Omni-Proactive Streaming Video Understanding.pdf",
     "web": "https://ruixiangzhao.github.io/OmniPro"
+  },
+  "zhao2026visage": {
+    "arxiv": "2607.28678",
+    "evidence": [
+      "arXiv abstract page"
+    ],
+    "github": "",
+    "local_pdf": "",
+    "web": ""
   },
   "zhi2025videoagent2": {
     "arxiv": "2504.04471",
